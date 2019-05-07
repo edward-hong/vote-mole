@@ -1,0 +1,22 @@
+{
+	"name": "vote-mole",
+	"version": "1.0.0",
+	"description": "Voting App",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/edward-hong/vote-mole.git"
+	},
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"MongoDB",
+		"Express",
+		"React",
+		"Node",
+		"MERN"
+	],
+	"author": "Edward Hong",
+	"license": "ISC"
+}
