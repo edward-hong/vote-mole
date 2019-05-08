@@ -43,10 +43,6 @@ app.use(session(sessionInfo))
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.get('/', (req, res) => {
-	res.send('hello')
-})
-
 app.use('/auth', auth)
 
 if (NODE_ENV === 'production') {
