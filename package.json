@@ -9,7 +9,9 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node server/index.js",
-		"server": "nodemon --watch server server/index.js"
+		"server": "nodemon --watch server server/index.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
 	},
 	"keywords": [
 		"MongoDB",
@@ -21,6 +23,7 @@
 	"author": "Edward Hong",
 	"license": "ISC",
 	"dependencies": {
+		"concurrently": "^4.1.0",
 		"connect-mongo": "^2.0.3",
 		"dotenv": "^8.0.0",
 		"express": "^4.16.4",
