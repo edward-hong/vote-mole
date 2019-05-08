@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { not } from 'ramda'
 import {
 	Collapse,
@@ -66,11 +67,30 @@ const NavLinkItem = styled(NavItem)`
 	text-align: center;
 `
 
-const Navigation = () => {
+const Navigation = ({ isLoggedIn }) => {
 	const [expandNav, setExpandNav] = useState(false)
 	const [isOpenLogin, setIsOpenLogin] = useState(false)
 
 	const handleToggle = (state, setState) => () => setState(not(state))
+
+	const renderNavItems = () => {
+		switch (isLoggedIn) {
+			case null:
+				return
+			case false:
+				return (
+					<NavLink href="#" onClick={handleToggle(isOpenLogin, setIsOpenLogin)}>
+						<NavLinkItem>Login</NavLinkItem>
+					</NavLink>
+				)
+			default:
+				return (
+					<NavLink href="/auth/logout">
+						<NavLinkItem>Logout</NavLinkItem>
+					</NavLink>
+				)
+		}
+	}
 
 	return (
 		<NavigationBar light expand="md">
@@ -86,11 +106,7 @@ const Navigation = () => {
 				onClick={handleToggle(expandNav, setExpandNav)}
 			/>
 			<Collapse isOpen={expandNav} navbar>
-				<Nav navbar>
-					<NavLink href="#" onClick={handleToggle(isOpenLogin, setIsOpenLogin)}>
-						<NavLinkItem>Login</NavLinkItem>
-					</NavLink>
-				</Nav>
+				<Nav navbar>{renderNavItems()}</Nav>
 			</Collapse>
 			<LoginModal
 				isOpen={isOpenLogin}
@@ -100,4 +116,6 @@ const Navigation = () => {
 	)
 }
 
-export default Navigation
+const mapStateToProps = ({ auth }) => ({ isLoggedIn: auth })
+
+export default connect(mapStateToProps)(Navigation)
