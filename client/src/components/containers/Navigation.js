@@ -2,17 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { not } from 'ramda'
-import {
-	Collapse,
-	Navbar,
-	NavbarToggler,
-	NavbarBrand,
-	Nav,
-	NavItem,
-	NavLink,
-} from 'reactstrap'
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from 'reactstrap'
 import styled from 'styled-components'
 
+import NavItems from '../presentational/NavItems'
 import LoginModal from '../presentational/LoginModal'
 import { HOME_PATH, COLOURS } from '../../constants'
 
@@ -63,34 +56,11 @@ const Hamburger = styled(NavbarToggler)`
 	}
 `
 
-const NavLinkItem = styled(NavItem)`
-	text-align: center;
-`
-
 const Navigation = ({ isLoggedIn }) => {
 	const [expandNav, setExpandNav] = useState(false)
 	const [isOpenLogin, setIsOpenLogin] = useState(false)
 
 	const handleToggle = (state, setState) => () => setState(not(state))
-
-	const renderNavItems = () => {
-		switch (isLoggedIn) {
-			case null:
-				return
-			case false:
-				return (
-					<NavLink href="#" onClick={handleToggle(isOpenLogin, setIsOpenLogin)}>
-						<NavLinkItem>Login</NavLinkItem>
-					</NavLink>
-				)
-			default:
-				return (
-					<NavLink href="/auth/logout">
-						<NavLinkItem>Logout</NavLinkItem>
-					</NavLink>
-				)
-		}
-	}
 
 	return (
 		<NavigationBar light expand="md">
@@ -106,7 +76,9 @@ const Navigation = ({ isLoggedIn }) => {
 				onClick={handleToggle(expandNav, setExpandNav)}
 			/>
 			<Collapse isOpen={expandNav} navbar>
-				<Nav navbar>{renderNavItems()}</Nav>
+				<Nav navbar>
+					<NavItems toggleLogin={handleToggle(isOpenLogin, setIsOpenLogin)} />
+				</Nav>
 			</Collapse>
 			<LoginModal
 				isOpen={isOpenLogin}
