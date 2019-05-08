@@ -12,6 +12,7 @@ import {
 } from 'reactstrap'
 import styled from 'styled-components'
 
+import LoginModal from '../presentational/LoginModal'
 import { HOME_PATH, COLOURS } from '../../constants'
 
 const NavigationBar = styled(Navbar)`
@@ -67,8 +68,9 @@ const NavLinkItem = styled(NavItem)`
 
 const Navigation = () => {
 	const [expandNav, setExpandNav] = useState(false)
+	const [isOpenLogin, setIsOpenLogin] = useState(false)
 
-	const handleToggleNav = () => setExpandNav(not(expandNav))
+	const handleToggle = (state, setState) => () => setState(not(state))
 
 	return (
 		<NavigationBar light expand="md">
@@ -79,14 +81,21 @@ const Navigation = () => {
 				/>
 				VoteMole
 			</NavbarBrand>
-			<Hamburger active={expandNav} onClick={handleToggleNav} />
+			<Hamburger
+				active={expandNav ? 1 : 0}
+				onClick={handleToggle(expandNav, setExpandNav)}
+			/>
 			<Collapse isOpen={expandNav} navbar>
 				<Nav navbar>
-					<NavLink href="#">
+					<NavLink href="#" onClick={handleToggle(isOpenLogin, setIsOpenLogin)}>
 						<NavLinkItem>Login</NavLinkItem>
 					</NavLink>
 				</Nav>
 			</Collapse>
+			<LoginModal
+				isOpen={isOpenLogin}
+				toggle={handleToggle(isOpenLogin, setIsOpenLogin)}
+			/>
 		</NavigationBar>
 	)
 }
