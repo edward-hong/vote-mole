@@ -4,6 +4,8 @@ import { NavLink, NavItem } from 'reactstrap'
 import styled from 'styled-components'
 import { isNil } from 'ramda'
 
+import { AUTH_LOGOUT_PATH } from '../../constants'
+
 const NavLinkItem = styled(NavItem)`
 	text-align: center;
 `
@@ -14,7 +16,7 @@ const NavItems = ({ toggleLogin, toggleAddPoll, isLoggedIn }) =>
 			<NavLink href="#" onClick={toggleAddPoll}>
 				<NavLinkItem>Add Poll</NavLinkItem>
 			</NavLink>
-			<NavLink href="/auth/logout">
+			<NavLink href={AUTH_LOGOUT_PATH}>
 				<NavLinkItem>Logout</NavLinkItem>
 			</NavLink>
 		</>

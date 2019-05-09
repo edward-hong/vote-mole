@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, ModalBody, Button } from 'reactstrap'
 import styled from 'styled-components'
 
-import { COLOURS } from '../../constants'
+import { COLOURS, AUTH_GOOGLE_LOGIN_PATH } from '../../constants'
 
 const GoogleLoginButton = styled(Button)`
 	color: ${COLOURS.google};
@@ -23,7 +23,7 @@ const LoginModal = ({ isOpen, toggle }) => (
 	<Modal isOpen={isOpen} toggle={toggle}>
 		<ModalBody>
 			<GoogleLoginButton
-				href="/auth/google"
+				href={AUTH_GOOGLE_LOGIN_PATH}
 				className="btn-google"
 				outline
 				block>

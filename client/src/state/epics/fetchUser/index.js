@@ -3,14 +3,14 @@ import { ajax } from 'rxjs/ajax'
 import { mergeMap, map } from 'rxjs/operators'
 
 import { fetchUserFulfilled } from '../../actions'
-import { FETCH_USER } from '../../../constants'
+import { FETCH_USER_TYPE, AUTH_CURRENT_USER_PATH } from '../../../constants'
 
 const fetchUserEpic = action$ =>
 	action$.pipe(
-		ofType(FETCH_USER),
+		ofType(FETCH_USER_TYPE),
 		mergeMap(() =>
 			ajax
-				.getJSON(`/auth/current_user`)
+				.getJSON(AUTH_CURRENT_USER_PATH)
 				.pipe(map(response => fetchUserFulfilled(response)))
 		)
 	)
