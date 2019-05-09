@@ -8,12 +8,19 @@ const MongoStore = require('connect-mongo')(session)
 const authRoutes = require('./routes/authRoutes')
 const pollRoutes = require('./routes/pollRoutes')
 
+// Env variables
+
 require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') })
 
 const { PORT, NODE_ENV, SESSION_SECRET, MONGO_URL } = process.env
 
+// Run code for User model
+// and setting up passport.js strategies
+
 require('./models/User')
 require('./auth/setupPassport')
+
+// Mongoose
 
 mongoose.connect(MONGO_URL, {
 	useCreateIndex: true,
@@ -22,6 +29,8 @@ mongoose.connect(MONGO_URL, {
 })
 
 mongoose.Promise = global.Promise
+
+// Session info
 
 const commonSessionInfo = { secret: SESSION_SECRET }
 
@@ -34,6 +43,8 @@ const sessionInfo =
 				}),
 		  }
 		: { ...commonSessionInfo, saveUninitialized: true, resave: true }
+
+// Express server
 
 const app = express()
 

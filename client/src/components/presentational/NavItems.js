@@ -10,6 +10,8 @@ const NavLinkItem = styled(NavItem)`
 	text-align: center;
 `
 
+// Render nothing if user info hasn't been fetched from backend
+// Then conditionally render NavItems depending on whether user is logged in
 const NavItems = ({ toggleLogin, toggleAddPoll, isLoggedIn }) =>
 	isNil(isLoggedIn) ? null : isLoggedIn ? (
 		<>

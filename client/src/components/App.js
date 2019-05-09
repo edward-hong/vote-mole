@@ -15,10 +15,12 @@ const Wrapper = styled.div`
 `
 
 const App = ({ fetchUser }) => {
+	// Check whether a user is logged in or not
 	useEffect(() => {
 		fetchUser()
 	}, [fetchUser])
 
+	// Set frontend routes with Navigation appearing in all routes
 	return (
 		<BrowserRouter>
 			<Wrapper>

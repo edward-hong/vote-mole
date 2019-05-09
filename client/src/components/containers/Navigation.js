@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 import { not } from 'ramda'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from 'reactstrap'
 import styled from 'styled-components'
@@ -24,6 +23,7 @@ const Hamburger = styled(NavbarToggler)`
 		position: relative;
 		line-height: 50px;
 
+		/* hamburger animation */
 		span {
 			background-image: none;
 			width: 30px;
@@ -57,7 +57,7 @@ const Hamburger = styled(NavbarToggler)`
 	}
 `
 
-const Navigation = ({ isLoggedIn }) => {
+const Navigation = () => {
 	const [expandNav, setExpandNav] = useState(false)
 	const [isOpenLogin, setIsOpenLogin] = useState(false)
 	const [isOpenAddPoll, setIsOpenAddPoll] = useState(false)
@@ -66,6 +66,7 @@ const Navigation = ({ isLoggedIn }) => {
 
 	return (
 		<NavigationBar light expand="md">
+			{/* Logo and App Name */}
 			<NavbarBrand tag={Link} to={HOME_PATH}>
 				<img
 					src="https://res.cloudinary.com/avatarhzh/image/upload/v1509887327/build-a-voting-app/logo.svg"
@@ -73,6 +74,8 @@ const Navigation = ({ isLoggedIn }) => {
 				/>
 				VoteMole
 			</NavbarBrand>
+
+			{/* Hamburger icon for smaller screens */}
 			<Hamburger
 				active={expandNav ? 1 : 0}
 				onClick={handleToggle(expandNav, setExpandNav)}
@@ -97,6 +100,4 @@ const Navigation = ({ isLoggedIn }) => {
 	)
 }
 
-const mapStateToProps = ({ auth }) => ({ isLoggedIn: auth })
-
-export default connect(mapStateToProps)(Navigation)
+export default Navigation

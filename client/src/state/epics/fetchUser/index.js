@@ -5,6 +5,7 @@ import { mergeMap, map } from 'rxjs/operators'
 import { fetchUserFulfilled } from '../../actions'
 import { FETCH_USER_TYPE, AUTH_CURRENT_USER_PATH } from '../../../constants'
 
+// Fetch for user info and then dispatch to reducer
 const fetchUserEpic = action$ =>
 	action$.pipe(
 		ofType(FETCH_USER_TYPE),

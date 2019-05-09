@@ -5,7 +5,9 @@ const Poll = require('../models/Poll')
 
 const poll = express.Router()
 
+// Submit new poll
 poll.post('/submit', requireLogin, (req, res) => {
+	// Check for existing poll question before submitting
 	Poll.findOne({
 		userID: req.body.userID,
 		pollQuestion: req.body.pollQuestion,
@@ -13,7 +15,6 @@ poll.post('/submit', requireLogin, (req, res) => {
 		if (foundPoll) {
 			res.status(406).send('failed')
 		} else {
-			redisClient.flushall()
 			new Poll(req.body).save().then(savedPoll => res.send(savedPoll._id))
 		}
 	})
