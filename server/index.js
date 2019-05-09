@@ -5,7 +5,8 @@ const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 
-const auth = require('./routes/auth')
+const authRoutes = require('./routes/authRoutes')
+const pollRoutes = require('./routes/pollRoutes')
 
 require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') })
 
@@ -43,7 +44,8 @@ app.use(session(sessionInfo))
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/auth', auth)
+app.use('/auth', authRoutes)
+app.use('/poll', pollRoutes)
 
 if (NODE_ENV === 'production') {
 	app.use(express.static('client/build'))
