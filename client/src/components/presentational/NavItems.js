@@ -8,11 +8,16 @@ const NavLinkItem = styled(NavItem)`
 	text-align: center;
 `
 
-const NavItems = ({ toggleLogin, isLoggedIn }) =>
+const NavItems = ({ toggleLogin, toggleAddPoll, isLoggedIn }) =>
 	isNil(isLoggedIn) ? null : isLoggedIn ? (
-		<NavLink href="/auth/logout">
-			<NavLinkItem>Logout</NavLinkItem>
-		</NavLink>
+		<>
+			<NavLink href="#" onClick={toggleAddPoll}>
+				<NavLinkItem>Add Poll</NavLinkItem>
+			</NavLink>
+			<NavLink href="/auth/logout">
+				<NavLinkItem>Logout</NavLinkItem>
+			</NavLink>
+		</>
 	) : (
 		<NavLink href="#" onClick={toggleLogin}>
 			<NavLinkItem>Login</NavLinkItem>

@@ -7,6 +7,7 @@ import styled from 'styled-components'
 
 import NavItems from '../presentational/NavItems'
 import LoginModal from '../presentational/LoginModal'
+import AddPollModal from '../presentational/AddPollModal'
 import { HOME_PATH, COLOURS } from '../../constants'
 
 const NavigationBar = styled(Navbar)`
@@ -59,6 +60,7 @@ const Hamburger = styled(NavbarToggler)`
 const Navigation = ({ isLoggedIn }) => {
 	const [expandNav, setExpandNav] = useState(false)
 	const [isOpenLogin, setIsOpenLogin] = useState(false)
+	const [isOpenAddPoll, setIsOpenAddPoll] = useState(false)
 
 	const handleToggle = (state, setState) => () => setState(not(state))
 
@@ -77,12 +79,19 @@ const Navigation = ({ isLoggedIn }) => {
 			/>
 			<Collapse isOpen={expandNav} navbar>
 				<Nav navbar>
-					<NavItems toggleLogin={handleToggle(isOpenLogin, setIsOpenLogin)} />
+					<NavItems
+						toggleLogin={handleToggle(isOpenLogin, setIsOpenLogin)}
+						toggleAddPoll={handleToggle(isOpenAddPoll, setIsOpenAddPoll)}
+					/>
 				</Nav>
 			</Collapse>
 			<LoginModal
 				isOpen={isOpenLogin}
 				toggle={handleToggle(isOpenLogin, setIsOpenLogin)}
+			/>
+			<AddPollModal
+				isOpen={isOpenAddPoll}
+				toggle={handleToggle(isOpenAddPoll, setIsOpenAddPoll)}
 			/>
 		</NavigationBar>
 	)
