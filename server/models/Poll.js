@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 
 const pollSchema = new Schema({
-	userID: String,
+	userId: String,
 	pollQuestion: String,
 	pollOptions: [
 		{
@@ -10,7 +10,7 @@ const pollSchema = new Schema({
 			votes: { type: Number, default: 0 },
 		},
 	],
-	IP: { type: [String], default: [] },
+	ip: { type: [String], default: [] },
 })
 
 const Polls = mongoose.model('poll', pollSchema)
