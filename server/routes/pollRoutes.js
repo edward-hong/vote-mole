@@ -1,9 +1,26 @@
 const express = require('express')
+const { equals } = require('ramda')
 
 const requireLogin = require('../middlewares/requireLogin')
 const Poll = require('../models/Poll')
 
 const poll = express.Router()
+
+// Determine find query from route
+const determineFindQuery = req =>
+	equals(req.path, '/all_polls')
+		? Poll.find({})
+		: Poll.find({ userId: req.params.id })
+
+// Controller used for both to get all polls and get user's polls
+const findData = (req, res) => {
+	const countPromise = determineFindQuery(req).countDocuments()
+	const pollsPromise = determineFindQuery(req)
+
+	Promise.all([countPromise, pollsPromise]).then(([count, polls]) => {
+		res.json({ count, polls })
+	})
+}
 
 // Submit new poll
 poll.post('/submit', requireLogin, (req, res) => {
@@ -19,5 +36,8 @@ poll.post('/submit', requireLogin, (req, res) => {
 		}
 	})
 })
+
+// Get all polls
+poll.get('/all_polls', findData)
 
 module.exports = poll
