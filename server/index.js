@@ -55,8 +55,8 @@ app.use(session(sessionInfo))
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/auth', authRoutes)
-app.use('/poll', pollRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/poll', pollRoutes)
 
 if (NODE_ENV === 'production') {
 	app.use(express.static('client/build'))

@@ -2,9 +2,9 @@
 export const HOME_PATH = '/'
 
 // Backend Paths
-export const AUTH_CURRENT_USER_PATH = '/auth/current_user'
-export const AUTH_LOGOUT_PATH = '/auth/logout'
-export const AUTH_GOOGLE_LOGIN_PATH = '/auth/google'
+export const AUTH_CURRENT_USER_PATH = '/api/auth/current_user'
+export const AUTH_LOGOUT_PATH = '/api/auth/logout'
+export const AUTH_GOOGLE_LOGIN_PATH = '/api/auth/google'
 
 // Colours
 export const COLOURS = {
