@@ -16,6 +16,7 @@ export const COLOURS = {
 	google: '#ec371b',
 	googleShadow: 'rgba(236, 55, 27, 0.5)',
 	error: '#dc3545',
+	success: '#00b55b',
 }
 
 // Redux Action Types

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reduxForm, Field, FieldArray } from 'redux-form'
+import { useAlert } from 'react-alert'
 import { withRouter } from 'react-router-dom'
 import {
 	Modal,
@@ -28,6 +29,8 @@ const AddPollModal = ({
 	auth,
 	history,
 }) => {
+	const alert = useAlert()
+
 	const cancel = () => {
 		reset()
 		toggle()
@@ -50,10 +53,14 @@ const AddPollModal = ({
 			({ response }) => {
 				cancel()
 				history.push(`${POLL_BRANCH_PATH}${response}`)
+				alert.success('Poll submitted!')
 			},
 			({ status }) => {
 				if (equals(status, 406)) {
 					toggle()
+					alert.error(
+						'Submit failed: You already have a poll asking the same question'
+					)
 				}
 			}
 		)

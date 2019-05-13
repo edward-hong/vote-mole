@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { applyMiddleware, compose, createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { Provider as StateProvider } from 'react-redux'
 import { createEpicMiddleware } from 'redux-observable'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import { not, equals, and, isNil } from 'ramda'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 import App from './components/App'
+import AlertTemplate from './components/AlertTemplate'
 import rootEpic from './state/epics'
 import rootReducer from './state/reducers'
 import initialState from './state/initialState'
@@ -28,12 +30,23 @@ const middleware = not(equals(NODE_ENV, 'production'))
 // Declare redux store
 const store = createStore(rootReducer, initialState, middleware)
 
+// Run redux-observable epics
 epicMiddleware.run(rootEpic)
 
+// Set alert options
+
+const alertOptions = {
+	position: positions.TOP_RIGHT,
+	transition: transitions.FADE,
+	timeout: 3000,
+}
+
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
+	<StateProvider store={store}>
+		<AlertProvider template={AlertTemplate} {...alertOptions}>
+			<App />
+		</AlertProvider>
+	</StateProvider>,
 	document.getElementById('root')
 )
 
