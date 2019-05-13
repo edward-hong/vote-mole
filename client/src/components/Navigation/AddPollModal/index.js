@@ -16,6 +16,7 @@ import { compose, or, map, equals } from 'ramda'
 import AddPollQuestionInput from './AddPollQuestionInput'
 import AddPollOptionsInputs from './AddPollOptionsInputs'
 import BlackButton from '../../styled/BlackButton'
+import { POLL_SUBMIT_PATH, POLL_BRANCH_PATH } from '../../../constants'
 
 const AddPollModal = ({
 	isOpen,
@@ -35,7 +36,7 @@ const AddPollModal = ({
 	// Submit poll to backend
 	const submit = ({ pollQuestion, options }) =>
 		ajax({
-			url: '/poll/submit',
+			url: POLL_SUBMIT_PATH,
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -48,7 +49,7 @@ const AddPollModal = ({
 		}).subscribe(
 			({ response }) => {
 				cancel()
-				// history.push(`/poll/${response}`)
+				history.push(`${POLL_BRANCH_PATH}${response}`)
 			},
 			({ status }) => {
 				if (equals(status, 406)) {
