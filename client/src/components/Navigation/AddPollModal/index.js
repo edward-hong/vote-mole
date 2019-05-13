@@ -56,10 +56,14 @@ const AddPollModal = ({
 				alert.success('Poll submitted!')
 			},
 			({ status }) => {
+				toggle()
 				if (equals(status, 406)) {
-					toggle()
 					alert.error(
 						'Submit failed: You already have a poll asking the same question'
+					)
+				} else if (equals(status, 401)) {
+					alert.error(
+						'Submit faild: You are unauthorized to create a poll. Please login'
 					)
 				}
 			}
