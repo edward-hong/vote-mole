@@ -6,8 +6,8 @@ const pollSchema = new Schema({
 	pollQuestion: String,
 	pollOptions: [
 		{
-			name: String,
-			votes: Number,
+			option: String,
+			votes: { type: Number, default: 0 },
 		},
 	],
 	IP: { type: [String], default: [] },

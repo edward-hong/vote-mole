@@ -6,6 +6,7 @@ import { createEpicMiddleware } from 'redux-observable'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { not, equals, and, isNil } from 'ramda'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 import App from './components/App'
 import rootEpic from './state/epics'

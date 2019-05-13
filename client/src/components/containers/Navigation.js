@@ -6,12 +6,16 @@ import styled from 'styled-components'
 
 import NavItems from '../presentational/NavItems'
 import LoginModal from '../presentational/LoginModal'
-import AddPollModal from '../presentational/AddPollModal'
+import AddPollModal from './AddPollModal'
 import { HOME_PATH, COLOURS } from '../../constants'
 
 const NavigationBar = styled(Navbar)`
 	margin-bottom: 2rem;
 	border-bottom: 1px solid ${COLOURS.primary};
+`
+
+const CollapsibleItems = styled(Collapse)`
+	flex-direction: row-reverse;
 `
 
 const Hamburger = styled(NavbarToggler)`
@@ -80,14 +84,14 @@ const Navigation = () => {
 				active={expandNav ? 1 : 0}
 				onClick={handleToggle(expandNav, setExpandNav)}
 			/>
-			<Collapse isOpen={expandNav} navbar>
+			<CollapsibleItems isOpen={expandNav} navbar>
 				<Nav navbar>
 					<NavItems
 						toggleLogin={handleToggle(isOpenLogin, setIsOpenLogin)}
 						toggleAddPoll={handleToggle(isOpenAddPoll, setIsOpenAddPoll)}
 					/>
 				</Nav>
-			</Collapse>
+			</CollapsibleItems>
 			<LoginModal
 				isOpen={isOpenLogin}
 				toggle={handleToggle(isOpenLogin, setIsOpenLogin)}

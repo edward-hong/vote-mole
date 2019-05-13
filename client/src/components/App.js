@@ -5,8 +5,8 @@ import styled from 'styled-components'
 
 import Home from './containers/Home'
 import Navigation from './containers/Navigation'
-import { fetchUser } from '../state/actions'
-import { HOME_PATH } from '../constants'
+import { fetchUser } from './../state/actions'
+import { HOME_PATH } from './../constants'
 
 const Wrapper = styled.div`
 	display: flex;
