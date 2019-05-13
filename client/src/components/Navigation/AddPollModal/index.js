@@ -13,9 +13,9 @@ import {
 import { ajax } from 'rxjs/ajax'
 import { compose, or, map, equals } from 'ramda'
 
-import AddPollQuestionInput from '../presentational/AddPollQuestionInput'
-import AddPollOptionsInputs from '../presentational/AddPollOptionsInputs'
-import BlackButton from '../presentational/styled/BlackButton'
+import AddPollQuestionInput from './AddPollQuestionInput'
+import AddPollOptionsInputs from './AddPollOptionsInputs'
+import BlackButton from '../../styled/BlackButton'
 
 const AddPollModal = ({
 	isOpen,
@@ -32,6 +32,7 @@ const AddPollModal = ({
 		toggle()
 	}
 
+	// Submit poll to backend
 	const submit = ({ pollQuestion, options }) =>
 		ajax({
 			url: '/poll/submit',
@@ -90,6 +91,7 @@ const AddPollModal = ({
 	)
 }
 
+// Validate add poll form
 const validate = ({ pollQuestion, options }) => {
 	const errors = {}
 

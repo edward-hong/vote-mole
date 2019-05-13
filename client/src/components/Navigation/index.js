@@ -4,8 +4,8 @@ import { not } from 'ramda'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from 'reactstrap'
 import styled from 'styled-components'
 
-import NavItems from '../presentational/NavItems'
-import LoginModal from '../presentational/LoginModal'
+import NavItems from './NavItems'
+import LoginModal from './LoginModal'
 import AddPollModal from './AddPollModal'
 import { HOME_PATH, COLOURS } from '../../constants'
 

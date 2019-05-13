@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome'
 import styled from 'styled-components'
 import { and } from 'ramda'
 
-import ErrorMessage from './styled/ErrorMessage'
+import ErrorMessage from '../../../../styled/ErrorMessage'
 
 const ExtraOption = styled(InputGroup)`
 	margin-bottom: 3px;
@@ -22,6 +22,7 @@ const PollExtraOptionInput = ({
 	placeholder,
 	meta: { error, touched },
 }) => {
+	// Only check for validity if fields are touched
 	const valid = touched ? (error ? false : true) : null
 
 	const handleRemoveOption = () => deleteOption(index)

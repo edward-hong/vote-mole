@@ -4,7 +4,7 @@ import { NavLink, NavItem } from 'reactstrap'
 import styled from 'styled-components'
 import { isNil } from 'ramda'
 
-import { AUTH_LOGOUT_PATH } from '../../constants'
+import { AUTH_LOGOUT_PATH } from '../../../constants'
 
 const NavLinkItem = styled(NavItem)`
 	text-align: center;

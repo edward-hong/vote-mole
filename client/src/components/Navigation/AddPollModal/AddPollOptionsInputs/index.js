@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { and, not, inc } from 'ramda'
 
 import AddPollExtraOptionInput from './AddPollExtraOptionInput'
-import ErrorMessage from './styled/ErrorMessage'
-import BlackButton from './styled/BlackButton'
-import mapIndexed from '../../utils/mapIndexed'
+import ErrorMessage from '../../../styled/ErrorMessage'
+import BlackButton from '../../../styled/BlackButton'
+import mapIndexed from '../../../../utils/mapIndexed'
 
 const PollOptionsWrapper = styled.div`
 	text-align: center;
@@ -17,6 +17,7 @@ const AddOptionButton = styled(BlackButton)`
 `
 
 const AddPollOptionsInputs = ({ fields, meta: { error, pristine } }) => {
+	// Push option to fields array
 	const handleAddOption = () => fields.push()
 
 	return (
@@ -25,6 +26,7 @@ const AddPollOptionsInputs = ({ fields, meta: { error, pristine } }) => {
 				Add Option
 			</AddOptionButton>
 			{and(and(not(pristine), error), <ErrorMessage message={error} />)}
+			{/* Map through fields array */}
 			{mapIndexed(
 				(field, index) => (
 					<Field

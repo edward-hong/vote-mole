@@ -2,7 +2,7 @@ import React from 'react'
 import { FormGroup, Input, Label } from 'reactstrap'
 import { and } from 'ramda'
 
-import ErrorMessage from './styled/ErrorMessage'
+import ErrorMessage from '../../../styled/ErrorMessage'
 
 const PollQuestionInput = ({
 	input,
@@ -11,6 +11,7 @@ const PollQuestionInput = ({
 	placeholder,
 	meta: { touched, error },
 }) => {
+	// Only check for validity if input has been touched
 	const valid = touched ? (error ? false : true) : null
 
 	return (

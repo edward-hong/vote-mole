@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, ModalBody, Button } from 'reactstrap'
 import styled from 'styled-components'
 
-import { COLOURS, AUTH_GOOGLE_LOGIN_PATH } from '../../constants'
+import { COLOURS, AUTH_GOOGLE_LOGIN_PATH } from '../../../constants'
 
 const GoogleLoginButton = styled(Button)`
 	color: ${COLOURS.google};
