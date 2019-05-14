@@ -1,7 +1,7 @@
 import { Button } from 'reactstrap'
 import styled from 'styled-components'
 
-import { COLOURS } from '../../constants'
+import { COLOURS } from '../../../constants'
 
 const BlackButton = styled(Button)`
 	color: ${COLOURS.primary};

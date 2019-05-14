@@ -2,8 +2,8 @@ import { combineReducers } from 'redux'
 import { reducer as form } from 'redux-form'
 
 import auth from './auth'
-import poll from './poll'
+import polls from './polls'
 
-const rootReducer = combineReducers({ auth, form, poll })
+const rootReducer = combineReducers({ auth, form, polls })
 
 export default rootReducer

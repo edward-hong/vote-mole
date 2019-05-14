@@ -28,6 +28,7 @@ export const COLOURS = {
 	googleShadow: 'rgba(236, 55, 27, 0.5)',
 	error: '#dc3545',
 	success: '#00b55b',
+	gray: '#ccc',
 }
 
 // ================
@@ -39,5 +40,5 @@ export const AUTH_FETCH_USER_TYPE = '@auth/FETCH_USER'
 export const AUTH_FETCH_USER_RECEIVED_TYPE = '@auth/FETCH_USER_RECEIVED'
 
 // Poll types
-export const POLL_ALL_TYPE = '@poll/FETCH_ALL_POLLS'
-export const POLL_ALL_RECEIVED_TYPE = '@poll/FETCH_ALL_POLLS_RECEIVED'
+export const POLL_ALL_TYPE = '@polls/FETCH_ALL_POLLS'
+export const POLL_ALL_RECEIVED_TYPE = '@polls/FETCH_ALL_POLLS_RECEIVED'

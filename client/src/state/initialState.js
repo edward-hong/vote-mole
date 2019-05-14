@@ -1,6 +1,6 @@
 const initialState = {
 	auth: null,
-	poll: null,
+	polls: null,
 }
 
 export default initialState

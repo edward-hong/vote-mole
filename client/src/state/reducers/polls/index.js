@@ -1,6 +1,6 @@
 import { POLL_ALL_RECEIVED_TYPE } from '../../../constants'
 
-const auth = (state = null, { type, payload }) => {
+const polls = (state = null, { type, payload }) => {
 	switch (type) {
 		// Pass data for all polls into global state
 		case POLL_ALL_RECEIVED_TYPE:
@@ -10,4 +10,4 @@ const auth = (state = null, { type, payload }) => {
 	}
 }
 
-export default auth
+export default polls

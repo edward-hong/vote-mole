@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Container, Row as BootstrapRow, Col } from 'reactstrap'
 import styled from 'styled-components'
 
+import Polls from '../Polls'
 import { fetchAllPolls } from '../../state/actions'
 
 const MainHeading = styled.h1`
@@ -17,12 +18,11 @@ const Row = styled(BootstrapRow)`
 	margin-top: 1.5rem;
 `
 
-const Home = ({ poll, fetchAllPolls }) => {
+const Home = ({ polls, fetchAllPolls }) => {
 	useEffect(() => {
 		fetchAllPolls()
 	}, [fetchAllPolls])
 
-	console.log(poll)
 	return (
 		<Container fluid>
 			<MainHeading>VoteMole</MainHeading>
@@ -40,11 +40,20 @@ const Home = ({ poll, fetchAllPolls }) => {
 					/>
 				</Col>
 			</Row>
+			<Row>
+				<Col
+					lg={{ size: '6', offset: 3 }}
+					md={{ size: '8', offset: 2 }}
+					sm={{ size: '10', offset: 1 }}
+					xs="12">
+					<Polls {...polls} />
+				</Col>
+			</Row>
 		</Container>
 	)
 }
 
-const mapStateToProps = ({ poll }) => ({ poll })
+const mapStateToProps = ({ polls }) => ({ polls })
 
 export default connect(
 	mapStateToProps,

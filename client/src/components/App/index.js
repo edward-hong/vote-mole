@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Home from '../Home'
 import Poll from '../Poll'
 import Navigation from '../Navigation'
+import Footer from '../Footer'
 import { fetchUser } from '../../state/actions'
 import { HOME_PATH, POLL_PATH } from '../../constants'
 
@@ -21,13 +22,14 @@ const App = ({ fetchUser }) => {
 		fetchUser()
 	}, [fetchUser])
 
-	// Set frontend routes with Navigation appearing in all routes
+	// Set frontend routes with Navigation and Footer appearing in all routes
 	return (
 		<BrowserRouter>
 			<Wrapper>
 				<Navigation />
 				<Route exact path={HOME_PATH} component={Home} />
 				<Route path={POLL_PATH} component={Poll} />
+				<Footer />
 			</Wrapper>
 		</BrowserRouter>
 	)
