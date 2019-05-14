@@ -1,1 +1,2 @@
-export { fetchUser, fetchUserFulfilled } from './auth'
+export { fetchUser, dispatchUserReceived } from './auth'
+export { fetchAllPolls, dispatchAllPollsReceived } from './poll'

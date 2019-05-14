@@ -8,7 +8,7 @@ const poll = express.Router()
 
 // Determine find query from route
 const determineFindQuery = req =>
-	equals(req.path, '/all_polls')
+	equals(req.path, '/all')
 		? Poll.find({})
 		: Poll.find({ userId: req.params.id })
 
@@ -38,6 +38,6 @@ poll.post('/submit', requireLogin, (req, res) => {
 })
 
 // Get all polls
-poll.get('/all_polls', findData)
+poll.get('/all', findData)
 
 module.exports = poll

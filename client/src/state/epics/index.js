@@ -1,7 +1,9 @@
 import { combineEpics } from 'redux-observable'
+import { values } from 'ramda'
 
-import fetchUser from './fetchUser'
+import * as authEpics from './auth'
+import * as pollEpics from './poll'
 
-const rootEpic = combineEpics(fetchUser)
+const rootEpic = combineEpics(...values(authEpics), ...values(pollEpics))
 
 export default rootEpic
