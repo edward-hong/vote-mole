@@ -26,8 +26,8 @@ const Polls = ({ count, polls }) => {
 	return (
 		<PollList>
 			{map(
-				({ _id, pollQuestion }) => (
-					<PollListItem key={_id} id={_id} question={pollQuestion} />
+				({ id, pollQuestion }) => (
+					<PollListItem key={id} id={id} question={pollQuestion} />
 				),
 				polls
 			)}

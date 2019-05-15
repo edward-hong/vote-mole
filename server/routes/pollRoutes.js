@@ -1,5 +1,5 @@
 const express = require('express')
-const { equals, not, isNil, gt } = require('ramda')
+const { equals, not, isNil, gt, map } = require('ramda')
 
 const requireLogin = require('../middlewares/requireLogin')
 const Poll = require('../models/Poll')
@@ -31,6 +31,9 @@ const findData = (req, res) => {
 		.sort({ _id: -1 })
 		.skip(offset)
 		.limit(limit)
+		.then(polls =>
+			map(({ _id, pollQuestion }) => ({ id: _id, pollQuestion }), polls)
+		)
 
 	Promise.all([countPromise, pollsPromise]).then(([count, polls]) => {
 		res.json({ count, polls })
