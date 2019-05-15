@@ -1,5 +1,5 @@
 const express = require('express')
-const { equals } = require('ramda')
+const { equals, not, isNil, gt } = require('ramda')
 
 const requireLogin = require('../middlewares/requireLogin')
 const Poll = require('../models/Poll')
@@ -12,10 +12,25 @@ const determineFindQuery = req =>
 		? Poll.find({})
 		: Poll.find({ userId: req.params.id })
 
+// Calculate the offset and limit from req.query
+const getOffset = req =>
+	not(isNil(req.query.offset)) ? parseInt(req.query.offset, 10) : 0
+
+const getLimit = req => {
+	const limit = not(isNil(req.query.limit)) ? parseInt(req.query.limit, 10) : 5
+	return gt(limit, 50) ? 50 : limit
+}
+
 // Controller used for both to get all polls and get user's polls
 const findData = (req, res) => {
+	const offset = getOffset(req)
+	const limit = getLimit(req)
+
 	const countPromise = determineFindQuery(req).countDocuments()
 	const pollsPromise = determineFindQuery(req)
+		.sort({ _id: -1 })
+		.skip(offset)
+		.limit(limit)
 
 	Promise.all([countPromise, pollsPromise]).then(([count, polls]) => {
 		res.json({ count, polls })
