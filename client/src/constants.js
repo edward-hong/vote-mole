@@ -29,6 +29,7 @@ export const COLOURS = {
 	error: '#dc3545',
 	success: '#00b55b',
 	gray: '#ccc',
+	pageLinkHover: 'rgba(33, 37, 41, 0.7)',
 }
 
 // ================
