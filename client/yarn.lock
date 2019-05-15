@@ -7660,7 +7660,7 @@ prompts@^2.0.1:
     kleur "^3.0.2"
     sisteransi "^1.0.0"
 
-prop-types@^15.5.6, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.0.0, prop-types@^15.5.6, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -7976,6 +7976,21 @@ react-transition-group@^4.0.1:
     dom-helpers "^3.4.0"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-ultimate-pagination-bootstrap-4@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-ultimate-pagination-bootstrap-4/-/react-ultimate-pagination-bootstrap-4-1.1.0.tgz#7b7a22a9b5510f7c6e4b37a6e082b02e7cb938e7"
+  integrity sha512-U80avOtbRAio9At4InBXNIc5AOHTSuSk6fteZHsTJ0VPIxiTWA+FWiMj0MrW9Pdo8/q1b4pAWg5LI2JQOWmaZg==
+  dependencies:
+    react-ultimate-pagination "1.1.0"
+
+react-ultimate-pagination@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-ultimate-pagination/-/react-ultimate-pagination-1.1.0.tgz#b19117122d357267b8d6d39e37a06d91bfe42e3f"
+  integrity sha512-aarXkb1FHk/gNNrdDkygediPoSkaCQ9Pmh2nUffiM3DmEAzjDsrLbPiQxOnILj+25280I4Q+3bHIn46B84pC7g==
+  dependencies:
+    prop-types "^15.0.0"
+    ultimate-pagination "1.0.0"
 
 react@^16.8.6:
   version "16.8.6"
@@ -9331,6 +9346,11 @@ uglify-js@^3.1.4:
   dependencies:
     commander "~2.20.0"
     source-map "~0.6.1"
+
+ultimate-pagination@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ultimate-pagination/-/ultimate-pagination-1.0.0.tgz#1f9f5465678d7410159d5a172c2013465e9bd85f"
+  integrity sha1-H59UZWeNdBAVnVoXLCATRl6b2F8=
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"

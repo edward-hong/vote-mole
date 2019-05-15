@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Container, Row as BootstrapRow, Col } from 'reactstrap'
 import styled from 'styled-components'
+import { dec, multiply } from 'ramda'
 
 import Polls from '../Polls'
+import PageIndex from '../PageIndex'
 import { fetchAllPolls } from '../../state/actions'
 
 const MainHeading = styled.h1`
@@ -19,9 +21,17 @@ const Row = styled(BootstrapRow)`
 `
 
 const Home = ({ polls, fetchAllPolls }) => {
+	const pageSize = 5
+	const [page, setPage] = useState(1)
+
 	useEffect(() => {
-		fetchAllPolls()
+		fetchAllPolls({ limit: pageSize, offset: 0 })
 	}, [fetchAllPolls])
+
+	const onPageChange = page => {
+		setPage(page)
+		fetchAllPolls({ limit: pageSize, offset: multiply(pageSize, dec(page)) })
+	}
 
 	return (
 		<Container fluid>
@@ -47,6 +57,12 @@ const Home = ({ polls, fetchAllPolls }) => {
 					sm={{ size: '10', offset: 1 }}
 					xs="12">
 					<Polls {...polls} />
+					<PageIndex
+						{...polls}
+						page={page}
+						pageSize={pageSize}
+						onPageChange={onPageChange}
+					/>
 				</Col>
 			</Row>
 		</Container>

@@ -9,9 +9,9 @@ import { POLL_ALL_TYPE, POLL_ALL_PATH } from '../../../constants'
 export const fetchAllPollsEpic = action$ =>
 	action$.pipe(
 		ofType(POLL_ALL_TYPE),
-		mergeMap(() =>
-			ajax
-				.getJSON(POLL_ALL_PATH)
+		mergeMap(({ payload: { limit, offset } }) => {
+			return ajax
+				.getJSON(`${POLL_ALL_PATH}?limit=${limit}&offset=${offset}`)
 				.pipe(map(response => dispatchAllPollsReceived(response)))
-		)
+		})
 	)
