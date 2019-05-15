@@ -1,7 +1,7 @@
 import React from 'react'
 import Pagination from 'react-ultimate-pagination-bootstrap-4'
 import styled from 'styled-components'
-import { isNil, and, divide } from 'ramda'
+import { isNil, and, divide, or, equals } from 'ramda'
 
 import { COLOURS } from '../../constants'
 
@@ -32,7 +32,7 @@ const PaginationContainer = styled.div`
 `
 
 const PageIndex = ({ polls, count, pageSize, page, onPageChange }) => {
-	if (and(isNil(polls), isNil(count))) {
+	if (or(and(isNil(polls), isNil(count)), equals(count, 0))) {
 		return null
 	}
 

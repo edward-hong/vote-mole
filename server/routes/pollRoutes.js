@@ -44,7 +44,7 @@ const findData = (req, res) => {
 poll.post('/submit', requireLogin, (req, res) => {
 	// Check for existing poll question before submitting
 	Poll.findOne({
-		userID: req.body.userID,
+		userId: req.body.userId,
 		pollQuestion: req.body.pollQuestion,
 	}).then(foundPoll => {
 		if (foundPoll) {
@@ -57,5 +57,8 @@ poll.post('/submit', requireLogin, (req, res) => {
 
 // Get all polls
 poll.get('/all', findData)
+
+// Get user's polls
+poll.get('/user/:id', requireLogin, findData)
 
 module.exports = poll

@@ -45,7 +45,7 @@ const AddPollModal = ({
 				'Content-Type': 'application/json',
 			},
 			body: {
-				userID: auth._id,
+				userId: auth._id,
 				pollQuestion: pollQuestion,
 				pollOptions: map(option => ({ option }), options),
 			},
