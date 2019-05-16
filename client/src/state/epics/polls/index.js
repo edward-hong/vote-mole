@@ -24,6 +24,7 @@ export const fetchAllPollsEpic = action$ =>
 		)
 	)
 
+// Fetch user polls data and then dispatch to reducer
 export const fetchUserPollsEpic = action$ =>
 	action$.pipe(
 		ofType(POLLS_USER_TYPE),

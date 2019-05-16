@@ -32,6 +32,7 @@ const PaginationContainer = styled.div`
 `
 
 const PageIndex = ({ polls, count, pageSize, page, onPageChange }) => {
+	// Don't render without data or if there are no polls
 	if (or(and(isNil(polls), isNil(count)), equals(count, 0))) {
 		return null
 	}

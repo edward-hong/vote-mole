@@ -14,6 +14,7 @@ const MyPolls = ({ auth, polls, fetchUserPolls, clearPolls }) => {
 	const [page, setPage] = useState(1)
 
 	useEffect(() => {
+		// Only fetch for user polls when logged in
 		if (is(Object, auth)) {
 			fetchUserPolls({ id: auth._id, limit: pageSize, offset: 0 })
 		}
@@ -23,6 +24,7 @@ const MyPolls = ({ auth, polls, fetchUserPolls, clearPolls }) => {
 		}
 	}, [fetchUserPolls, clearPolls, auth])
 
+	// On page change, change page state and fetch for more data
 	const onPageChange = page => {
 		setPage(page)
 		fetchUserPolls({
@@ -32,6 +34,7 @@ const MyPolls = ({ auth, polls, fetchUserPolls, clearPolls }) => {
 		})
 	}
 
+	// Only render when logged in
 	return is(Object, auth) ? (
 		<Container fluid>
 			<MainHeading>My Polls</MainHeading>
