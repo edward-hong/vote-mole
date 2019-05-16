@@ -61,4 +61,9 @@ poll.get('/all', findData)
 // Get user's polls
 poll.get('/user/:id', requireLogin, findData)
 
+// Get individual poll
+poll.get('/info/:id', (req, res) => {
+	Poll.findById(req.params.id).then(poll => res.send(poll))
+})
+
 module.exports = poll
