@@ -5,7 +5,7 @@ import { NavLink, NavItem } from 'reactstrap'
 import styled from 'styled-components'
 import { isNil } from 'ramda'
 
-import { AUTH_LOGOUT_PATH, POLL_USER_PATH } from '../../../constants'
+import { AUTH_LOGOUT_PATH, POLLS_USER_PATH } from '../../../constants'
 
 const NavLinkItem = styled(NavItem)`
 	text-align: center;
@@ -16,7 +16,7 @@ const NavLinkItem = styled(NavItem)`
 const NavItems = ({ toggleLogin, toggleAddPoll, isLoggedIn }) =>
 	isNil(isLoggedIn) ? null : isLoggedIn ? (
 		<>
-			<NavLink to={POLL_USER_PATH} tag={Link}>
+			<NavLink to={POLLS_USER_PATH} tag={Link}>
 				<NavLinkItem>My Polls</NavLinkItem>
 			</NavLink>
 			<NavLink href="#" onClick={toggleAddPoll}>
