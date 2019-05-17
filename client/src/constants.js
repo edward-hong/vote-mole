@@ -19,6 +19,7 @@ export const AUTH_GOOGLE_LOGIN_PATH = '/api/auth/google'
 export const POLL_SUBMIT_PATH = '/api/poll/submit'
 export const POLL_INFO_BRANCH_PATH = '/api/poll/info/'
 export const POLL_DELETE_PATH = '/api/poll/delete/'
+export const POLL_VOTE_PATH = '/api/poll/vote'
 export const POLLS_ALL_PATH = '/api/poll/all'
 export const POLLS_GET_USER_PATH = '/api/poll/user/'
 
@@ -78,7 +79,9 @@ export const POLLS_USER_TYPE = '@polls/FETCH_USER_POLLS'
 export const POLLS_USER_RECEIVED_TYPE = 'polls/FETCH_USER_POLLS_RECEIVED'
 
 // Poll types
-
 export const POLL_INFO_TYPE = '@poll/FETCH_POLL'
 export const POLL_INFO_RECEIVED_TYPE = '@poll/FETCH_POLL_RECEIVED'
 export const POLL_CLEAR_TYPE = '@poll/CLEAR_POLL'
+export const POLL_VOTE_TYPE = '@poll/VOTE_POLL'
+export const POLL_VOTE_ERROR_TYPE = '@poll/VOTE_POLL_ERROR'
+export const POLL_VOTE_RECEIVED_TYPE = '@poll/VOTE_POLL_RECEIVED'

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { useAlert } from 'react-alert'
 import { reduxForm, Field } from 'redux-form'
 import { Col, Form, ButtonGroup, Button } from 'reactstrap'
 import styled from 'styled-components'
@@ -8,6 +9,7 @@ import { isNil, compose, is, and, equals } from 'ramda'
 import Select from './Select'
 import CustomOption from './CustomOption'
 import Loader from '../../styled/Loader'
+import { votePoll } from '../../../state/actions'
 import { COLOURS } from '../../../constants'
 
 const PollHeading = styled.h1`
@@ -40,7 +42,9 @@ const TweetButton = styled(Button)`
 	}
 `
 
-const VoteForm = ({ poll, handleSubmit, auth, form, toggle }) => {
+const VoteForm = ({ poll, handleSubmit, auth, form, toggle, votePoll }) => {
+	const alert = useAlert()
+
 	// Render loader if poll data haven't been received
 	if (isNil(poll)) {
 		return (
@@ -49,9 +53,15 @@ const VoteForm = ({ poll, handleSubmit, auth, form, toggle }) => {
 			</Col>
 		)
 	}
+
 	const { pollQuestion, pollOptions } = poll
 
-	const submit = values => console.log(values)
+	const submit = values =>
+		votePoll({
+			values,
+			poll,
+			alert,
+		})
 
 	const isCustomOption = values =>
 		is(Object, values) && equals(values.selection, "I'd like a custom option")
@@ -127,5 +137,8 @@ const mapStateToProps = ({ poll, form, auth }) => ({ poll, form, auth })
 
 export default compose(
 	reduxForm({ form: 'vote', validate }),
-	connect(mapStateToProps)
+	connect(
+		mapStateToProps,
+		{ votePoll }
+	)
 )(VoteForm)

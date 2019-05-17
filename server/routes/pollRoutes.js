@@ -68,7 +68,7 @@ poll.get('/info/:id', (req, res) => {
 
 // Vote on poll
 poll.put('/vote', (req, res) => {
-	if (equals(req.body.selection ,'I\'d like a custom option')) {
+	if (equals(req.body.selection, "I'd like a custom option")) {
 		Poll.findOneAndUpdate(
 			{
 				_id: req.body.id,
