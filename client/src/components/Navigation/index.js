@@ -99,6 +99,7 @@ const Navigation = () => {
 			<AddPollModal
 				isOpen={isOpenAddPoll}
 				toggle={handleToggle(isOpenAddPoll, setIsOpenAddPoll)}
+				setExpandNav={setExpandNav}
 			/>
 		</NavigationBar>
 	)

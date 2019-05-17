@@ -28,6 +28,7 @@ const AddPollModal = ({
 	submitting,
 	auth,
 	history,
+	setExpandNav,
 }) => {
 	const alert = useAlert()
 
@@ -52,6 +53,7 @@ const AddPollModal = ({
 		}).subscribe(
 			({ response }) => {
 				cancel()
+				setExpandNav(false)
 				history.push(`${POLL_BRANCH_PATH}${response}`)
 				alert.success('Poll submitted!')
 			},

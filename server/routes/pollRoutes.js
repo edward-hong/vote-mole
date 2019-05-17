@@ -66,4 +66,12 @@ poll.get('/info/:id', (req, res) => {
 	Poll.findById(req.params.id).then(poll => res.send(poll))
 })
 
+// Delete poll
+poll.delete('/delete/:id', requireLogin, (req, res) => {
+	Poll.findByIdAndRemove(req.params.id).then(deletedPoll => {
+		if (deletedPoll) res.send({ status: 'Poll deleted' })
+		else res.status(400).send({ status: 'Poll not found' })
+	})
+})
+
 module.exports = poll
