@@ -3,13 +3,21 @@ import { ajax } from 'rxjs/ajax'
 import { connect } from 'react-redux'
 import { useAlert } from 'react-alert'
 import { withRouter } from 'react-router-dom'
-import { Container, Row } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
+import styled from 'styled-components'
 import { not, compose, equals } from 'ramda'
 
 import VoteForm from './VoteForm'
+import Graph from './Graph'
 import DeletePollModal from './DeletePollModal'
 import { fetchPoll, clearPoll } from '../../state/actions'
 import { POLL_DELETE_PATH, HOME_PATH } from '../../constants'
+
+const GraphContainer = styled(Col)`
+	@media (max-width: 575px) {
+		margin-top: 1.5rem;
+	}
+`
 
 const Poll = ({ match, fetchPoll, clearPoll, history }) => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -49,6 +57,9 @@ const Poll = ({ match, fetchPoll, clearPoll, history }) => {
 		<Container fluid>
 			<Row>
 				<VoteForm toggle={toggle} />
+				<GraphContainer sm="8" xs="12">
+					<Graph />
+				</GraphContainer>
 			</Row>
 			<DeletePollModal
 				isOpen={isOpen}

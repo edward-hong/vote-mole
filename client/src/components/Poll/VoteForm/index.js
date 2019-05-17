@@ -13,6 +13,12 @@ import { COLOURS } from '../../../constants'
 const PollHeading = styled.h1`
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
+
+	@media (max-width: 575px) {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
 `
 
 const Buttons = styled(ButtonGroup)`

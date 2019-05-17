@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chart.js": "^2.8.0",
     "font-awesome": "^4.7.0",
     "http-proxy-middleware": "^0.19.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-alert": "^5.5.0",
+    "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
     "react-redux": "^7.0.3",
