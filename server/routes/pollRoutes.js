@@ -66,6 +66,56 @@ poll.get('/info/:id', (req, res) => {
 	Poll.findById(req.params.id).then(poll => res.send(poll))
 })
 
+// Vote on poll
+poll.put('/vote', (req, res) => {
+	if (equals(req.body.selection ,'I\'d like a custom option')) {
+		Poll.findOneAndUpdate(
+			{
+				_id: req.body.id,
+				'pollOptions.option': { $ne: req.body.customSelection },
+				ip: { $ne: req.clientIp },
+			},
+			{
+				$addToSet: {
+					pollOptions: {
+						option: req.body.customSelection,
+						votes: 1,
+					},
+				},
+				$push: {
+					ip: req.clientIP,
+				},
+			},
+			{ new: true }
+		)
+			.then(updatedPoll => {
+				updatedPoll ? res.send(updatedPoll) : res.status(304).send(updatedPoll)
+			})
+			.catch(err => res.send(err))
+	} else {
+		Poll.findOneAndUpdate(
+			{
+				_id: req.body.id,
+				pollOptions: {
+					$elemMatch: { option: req.body.selection },
+				},
+				ip: { $ne: req.clientIp },
+			},
+			{
+				$inc: { 'pollOptions.$.votes': 1 },
+				$push: {
+					ip: req.clientIp,
+				},
+			},
+			{ new: true }
+		)
+			.then(updatedPoll => {
+				res.send(updatedPoll)
+			})
+			.catch(err => res.send(err))
+	}
+})
+
 // Delete poll
 poll.delete('/delete/:id', requireLogin, (req, res) => {
 	Poll.findByIdAndRemove(req.params.id).then(deletedPoll => {

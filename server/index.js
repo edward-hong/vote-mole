@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+const requestIp = require('request-ip')
 
 const authRoutes = require('./routes/authRoutes')
 const pollRoutes = require('./routes/pollRoutes')
@@ -47,6 +48,8 @@ const sessionInfo =
 // Express server
 
 const app = express()
+
+app.use(requestIp.mw())
 
 app.use(express.json())
 
