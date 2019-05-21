@@ -5,6 +5,7 @@ export const HOME_PATH = '/'
 export const POLL_PATH = '/poll/:id'
 export const POLL_BRANCH_PATH = '/poll/'
 export const POLLS_USER_PATH = '/my_polls'
+export const PRIVACY_POLICY_PATH = '/privacy_policy'
 
 // ================
 // Backend Paths

@@ -8,9 +8,10 @@ import Poll from '../Poll'
 import MyPolls from '../MyPolls'
 import Navigation from '../Navigation'
 import Footer from '../Footer'
+import PrivacyPolicy from '../PrivacyPolicy'
 import RequireAuth from '../hoc/RequireAuth'
 import { fetchUser } from '../../state/actions'
-import { HOME_PATH, POLL_PATH, POLLS_USER_PATH } from '../../constants'
+import { HOME_PATH, POLL_PATH, POLLS_USER_PATH, PRIVACY_POLICY_PATH } from '../../constants'
 
 const Wrapper = styled.div`
 	display: flex;
@@ -31,6 +32,7 @@ const App = ({ fetchUser }) => {
 				<Navigation />
 				<Route exact path={HOME_PATH} component={Home} />
 				<Route path={POLL_PATH} component={Poll} />
+				<Route path={PRIVACY_POLICY_PATH} component={PrivacyPolicy} />
 				<Route path={POLLS_USER_PATH} component={RequireAuth(MyPolls)} />
 				<Footer />
 			</Wrapper>
