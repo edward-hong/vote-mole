@@ -23,11 +23,13 @@ require('./auth/setupPassport')
 
 // Mongoose
 
-mongoose.connect(MONGO_URL, {
-	useCreateIndex: true,
-	useFindAndModify: false,
-	useNewUrlParser: true,
-})
+mongoose
+	.connect(MONGO_URL, {
+		useCreateIndex: true,
+		useFindAndModify: false,
+		useNewUrlParser: true,
+	})
+	.catch(err => console.error(err))
 
 mongoose.Promise = global.Promise
 
