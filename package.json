@@ -7,11 +7,16 @@
 		"url": "git://github.com/edward-hong/vote-mole.git"
 	},
 	"main": "index.js",
+	"engines": {
+		"node": "10.x",
+		"yarn": "1.x"
+	},
 	"scripts": {
 		"start": "node server/index.js",
 		"server": "nodemon --watch server server/index.js",
-		"client": "npm start --prefix client",
-		"dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
+		"client": "yarn --cwd client start",
+		"dev": "concurrently --names \"server,client\" \"yarn server --silent\" \"yarn client --silent\"",
+		"build": "yarn --cwd client && yarn --cwd client build"
 	},
 	"keywords": [
 		"MongoDB",
