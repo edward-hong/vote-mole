@@ -33,7 +33,11 @@ mongoose.Promise = global.Promise
 
 // Session info
 
-const commonSessionInfo = { secret: SESSION_SECRET }
+const commonSessionInfo = {
+	secret: SESSION_SECRET,
+	saveUninitialized: true,
+	resave: true,
+}
 
 const sessionInfo =
 	NODE_ENV === 'production'
@@ -43,7 +47,7 @@ const sessionInfo =
 					mongooseConnection: mongoose.connection,
 				}),
 		  }
-		: { ...commonSessionInfo, saveUninitialized: true, resave: true }
+		: { ...commonSessionInfo }
 
 // Express server
 
