@@ -23,6 +23,8 @@ require('./auth/setupPassport')
 
 // Mongoose
 
+mongoose.Promise = global.Promise
+
 mongoose
 	.connect(MONGO_URL, {
 		useCreateIndex: true,
@@ -30,8 +32,6 @@ mongoose
 		useNewUrlParser: true,
 	})
 	.catch(err => console.error(err))
-
-mongoose.Promise = global.Promise
 
 // Session info
 

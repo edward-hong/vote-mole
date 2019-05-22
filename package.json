@@ -16,7 +16,8 @@
 		"server": "nodemon --watch server server/index.js",
 		"client": "yarn --cwd client start",
 		"dev": "concurrently --names \"server,client\" \"yarn server --silent\" \"yarn client --silent\"",
-		"build": "yarn --cwd client && yarn --cwd client build"
+		"build": "yarn --cwd client && yarn --cwd client build",
+		"deploy": "git push heroku master"
 	},
 	"keywords": [
 		"MongoDB",
