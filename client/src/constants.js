@@ -15,6 +15,9 @@ export const PRIVACY_POLICY_PATH = '/privacy_policy'
 export const AUTH_CURRENT_USER_PATH = '/api/auth/current_user'
 export const AUTH_LOGOUT_PATH = '/api/auth/logout'
 export const AUTH_GOOGLE_LOGIN_PATH = '/api/auth/google'
+export const AUTH_FACEBOOK_LOGIN_PATH = '/api/auth/facebook'
+export const AUTH_TWITTER_LOGIN_PATH = '/api/auth/twitter'
+export const AUTH_GITHUB_LOGIN_PATH = '/api/auth/github'
 
 // Poll Paths
 export const POLL_SUBMIT_PATH = '/api/poll/submit'
@@ -55,8 +58,12 @@ export const COLOURS = {
 	primary: '#21252a',
 	google: '#ec371b',
 	googleShadow: 'rgba(236, 55, 27, 0.5)',
+	facebook: '#4060b7',
+	facebookShadow: 'rgba(64, 96, 183, 0.5)',
 	twitter: '#009cfa',
 	twitterShadow: ' rgba(0, 156, 250, 0.5)',
+	github: '#24292f',
+	githubShadow: 'rgba(36, 41, 47, 0.5)',
 	error: '#dc3545',
 	success: '#00b55b',
 	gray: '#ccc',
