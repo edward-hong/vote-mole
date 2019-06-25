@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Polls renders polls correctly 1`] = `
+.c1 {
+  height: 3.5rem;
+  padding: 0;
+  border-color: #21252a;
+}
+
+.c2 {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #21252a;
+  line-height: 3.5rem;
+}
+
+.c2:hover {
+  color: white;
+  background-color: #21252a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+}
+
+.c0 {
+  height: 276px;
+}
+
+<ul
+  class="c0 list-group"
+>
+  <li
+    class="c1 list-group-item"
+  >
+    <a
+      class="c2"
+      href="/poll/5cdaf28cee882077685935e3"
+    >
+      PHP, Python or Ruby?
+    </a>
+  </li>
+  <li
+    class="c1 list-group-item"
+  >
+    <a
+      class="c2"
+      href="/poll/5cdaf0d4ee882077685935de"
+    >
+      Favourite JavaScript Framework
+    </a>
+  </li>
+  <li
+    class="c1 list-group-item"
+  >
+    <a
+      class="c2"
+      href="/poll/5cdaf0a6ee882077685935d9"
+    >
+      Favourite Sport
+    </a>
+  </li>
+  <li
+    class="c1 list-group-item"
+  >
+    <a
+      class="c2"
+      href="/poll/5cdaf088ee882077685935d6"
+    >
+      Favourite Movie
+    </a>
+  </li>
+  <li
+    class="c1 list-group-item"
+  >
+    <a
+      class="c2"
+      href="/poll/5cdaf04fee882077685935d1"
+    >
+      Favourite Superhero
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Polls shows the Loader component when there is no \`count\` and \`polls\` props 1`] = `
+.c0 {
+  position: relative;
+  margin-top: 30px;
+}
+
+.c1 {
+  margin: -24px 0 0 -24px;
+  height: 49px;
+  width: 49px;
+  -webkit-animation: cssload-rotate 1150ms linear infinite;
+  animation: cssload-rotate 1150ms linear infinite;
+}
+
+.c1,
+.c1:before,
+.c1:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid #ccc;
+  border-left-color: black;
+  border-radius: 974px;
+}
+
+.c1:before {
+  content: '';
+  margin: -22px 0 0 -22px;
+  height: 43px;
+  width: 43px;
+  -webkit-animation: cssload-rotate 1150ms linear infinite;
+  animation: cssload-rotate 1150ms linear infinite;
+}
+
+.c1:after {
+  content: '';
+  margin: -28px 0 0 -28px;
+  height: 55px;
+  width: 55px;
+  -webkit-animation: cssload-rotate 2300ms linear infinite;
+  animation: cssload-rotate 2300ms linear infinite;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  />
+</div>
+`;

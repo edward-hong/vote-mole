@@ -34,7 +34,7 @@ const Polls = ({ count, polls }) => {
 				({ id, pollQuestion }) => (
 					<PollListItem key={id} id={id} question={pollQuestion} />
 				),
-				polls
+				polls,
 			)}
 		</PollList>
 	)
