@@ -54,10 +54,12 @@
 	},
 	"jest": {
 		"collectCoverageFrom": [
-			"client/src/**/*/*.js",
-			"client/!src/index.js",
-			"client/!src/constants.js",
-			"client/!src/setupProxy.js"
+			"src/**/*/*.js",
+			"!src/index.js",
+			"!src/constants.js",
+			"!src/setupProxy.js",
+			"!src/state/**/*/*.js",
+			"!src/state/initialState.js"
 		]
 	}
 }
