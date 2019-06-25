@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"@testing-library/react": "^8.0.2",
+		"history": "^4.9.0",
 		"jest-dom": "^3.5.0",
 		"jest-styled-components": "^6.3.3"
 	},
@@ -59,7 +60,8 @@
 			"!src/constants.js",
 			"!src/setupProxy.js",
 			"!src/state/**/*/*.js",
-			"!src/state/initialState.js"
+			"!src/state/initialState.js",
+			"!src/utils/renderWithRouter/index.js"
 		]
 	}
 }

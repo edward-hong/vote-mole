@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  color: #21252a;
+  border-color: #21252a;
+}
+
+.c0:hover,
+.c0:active {
+  background-color: #21252a;
+  border-color: #21252a;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 3px rgba(33,37,41,0.5);
+}
+
+<button
+  class="c0 btn btn-secondary"
+>
+  Black Button
+</button>
+`;

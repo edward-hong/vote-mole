@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  margin-top: 1.5rem;
+}
+
+<div
+  class="c0 row"
+>
+  <div />
+</div>
+`;
