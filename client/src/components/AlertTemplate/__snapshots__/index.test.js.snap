@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertTemplate error alert message renders correctly 1`] = `
+.c0 {
+  width: 300px;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  border-radius: 0.25rem;
+  padding: 20px;
+  padding-left: 40px;
+  background-color: white;
+}
+
+.c2 {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: transparent;
+  color: #dc3545;
+  font-family: sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: background 250ms ease-in-out,-webkit-transform 150ms ease;
+  -webkit-transition: background 250ms ease-in-out,transform 150ms ease;
+  transition: background 250ms ease-in-out,transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.c1 {
+  display: inline-block;
+  position: absolute;
+  left: 25px;
+  top: 36px;
+}
+
+<div
+  class="c0"
+  type="error"
+>
+  <span
+    aria-hidden="true"
+    class="fa fa-exclamation-triangle c1"
+  />
+  Error Message
+  <button
+    class="c2"
+    type="error"
+  >
+    <span
+      aria-hidden="true"
+      class="fa fa-close"
+    />
+  </button>
+</div>
+`;
+
+exports[`AlertTemplate success alert message renders correctly 1`] = `
+.c0 {
+  width: 300px;
+  border: 1px solid #00b55b;
+  color: #00b55b;
+  border-radius: 0.25rem;
+  padding: 20px;
+  padding-left: 40px;
+  background-color: white;
+}
+
+.c2 {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: transparent;
+  color: #00b55b;
+  font-family: sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: background 250ms ease-in-out,-webkit-transform 150ms ease;
+  -webkit-transition: background 250ms ease-in-out,transform 150ms ease;
+  transition: background 250ms ease-in-out,transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.c1 {
+  display: inline-block;
+  position: absolute;
+  left: 25px;
+  top: 36px;
+}
+
+<div
+  class="c0"
+  type="success"
+>
+  <span
+    aria-hidden="true"
+    class="fa fa-check-circle c1"
+  />
+  Success Message
+  <button
+    class="c2"
+    type="success"
+  >
+    <span
+      aria-hidden="true"
+      class="fa fa-close"
+    />
+  </button>
+</div>
+`;
