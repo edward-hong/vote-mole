@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+.c0 {
+  text-align: center;
+  margin: 3rem auto 1.5rem;
+}
+
+<footer
+  class="c0"
+>
+  Made by Edward Hong | 
+  <a
+    href="/privacy_policy"
+  >
+    Privacy Policy
+  </a>
+</footer>
+`;
