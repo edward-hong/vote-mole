@@ -4,10 +4,8 @@ import BlackButton from '.'
 
 describe('BlackButton', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstChild: element },
-		} = render(<BlackButton>Black Button</BlackButton>)
+		const { container } = render(<BlackButton>Black Button</BlackButton>)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })

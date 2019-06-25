@@ -5,10 +5,10 @@ import PollListItem from '.'
 
 describe('PollListItem', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstName: element },
-		} = renderWithRouter(<PollListItem id="1" question="Tabs or Spaces?" />)
+		const { container } = renderWithRouter(
+			<PollListItem id="1" question="Tabs or Spaces?" />,
+		)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })

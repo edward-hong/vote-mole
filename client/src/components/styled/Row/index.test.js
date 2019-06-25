@@ -5,14 +5,8 @@ import Row from '.'
 
 describe('Row', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstChild: element },
-		} = render(
-			<Row>
-				<div />
-			</Row>,
-		)
+		const { container } = render(<Row />)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })

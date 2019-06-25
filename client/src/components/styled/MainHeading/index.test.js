@@ -5,10 +5,8 @@ import MainHeading from '.'
 
 describe('MainHeading', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstChild: element },
-		} = render(<MainHeading>Main Heading</MainHeading>)
+		const { container } = render(<MainHeading>Main Heading</MainHeading>)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })

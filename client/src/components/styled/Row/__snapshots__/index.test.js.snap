@@ -7,7 +7,5 @@ exports[`Row renders correctly 1`] = `
 
 <div
   class="c0 row"
->
-  <div />
-</div>
+/>
 `;

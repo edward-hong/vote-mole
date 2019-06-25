@@ -5,10 +5,8 @@ import ErrorMessage from '.'
 
 describe('ErrorMessage', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstChild: element },
-		} = render(<ErrorMessage message="There's an error" />)
+		const { container } = render(<ErrorMessage message="There's an error" />)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })

@@ -5,10 +5,8 @@ import Loader from '.'
 
 describe('Loader', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstChild: element },
-		} = render(<Loader />)
+		const { container } = render(<Loader />)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })

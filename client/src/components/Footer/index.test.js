@@ -5,10 +5,8 @@ import Footer from '.'
 
 describe('Footer', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstChild: element },
-		} = renderWithRouter(<Footer />)
+		const { container } = renderWithRouter(<Footer />)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })

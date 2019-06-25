@@ -5,10 +5,8 @@ import PrivacyPolicy from '.'
 
 describe('PrivacyPolicy', () => {
 	it('renders correctly', () => {
-		const {
-			container: { firstChild: element },
-		} = render(<PrivacyPolicy />)
+		const { container } = render(<PrivacyPolicy />)
 
-		expect(element).toMatchSnapshot()
+		expect(container.firstChild).toMatchSnapshot()
 	})
 })
