@@ -76,14 +76,14 @@ const VoteForm = ({ poll, handleSubmit, auth, form, toggle, votePoll }) => {
 		window.open(
 			url,
 			'twitter',
-			'location,status,scrollbars,resizable,width=640, height=250,left=320,top=125'
+			'location,status,scrollbars,resizable,width=640, height=250,left=320,top=125',
 		)
 	}
 
 	return (
 		<Col xs="12" sm="4">
 			<PollHeading>{pollQuestion}</PollHeading>
-			<Form onSubmit={handleSubmit(submit)} id="vote">
+			<Form data-testid="vote-form" onSubmit={handleSubmit(submit)} id="vote">
 				<Field
 					name="selection"
 					type="select"
@@ -100,7 +100,7 @@ const VoteForm = ({ poll, handleSubmit, auth, form, toggle, votePoll }) => {
 						label="Vote with my own option:"
 						placeholder="Custom option"
 						component={CustomOption}
-					/>
+					/>,
 				)}
 				<Buttons vertical>
 					<Button outline color="success">
@@ -115,7 +115,7 @@ const VoteForm = ({ poll, handleSubmit, auth, form, toggle, votePoll }) => {
 							<Button outline onClick={toggle} color="danger">
 								Delete
 							</Button>
-						</>
+						</>,
 					)}
 				</Buttons>
 			</Form>
@@ -139,6 +139,6 @@ export default compose(
 	reduxForm({ form: 'vote', validate }),
 	connect(
 		mapStateToProps,
-		{ votePoll }
-	)
+		{ votePoll },
+	),
 )(VoteForm)

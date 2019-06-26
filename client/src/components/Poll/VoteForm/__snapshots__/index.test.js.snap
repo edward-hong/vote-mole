@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VoteForm renders Loader when there is no poll 1`] = `
+.c0 {
+  position: relative;
+  margin-top: 30px;
+}
+
+.c1 {
+  margin: -24px 0 0 -24px;
+  height: 49px;
+  width: 49px;
+  -webkit-animation: cssload-rotate 1150ms linear infinite;
+  animation: cssload-rotate 1150ms linear infinite;
+}
+
+.c1,
+.c1:before,
+.c1:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid #ccc;
+  border-left-color: black;
+  border-radius: 974px;
+}
+
+.c1:before {
+  content: '';
+  margin: -22px 0 0 -22px;
+  height: 43px;
+  width: 43px;
+  -webkit-animation: cssload-rotate 1150ms linear infinite;
+  animation: cssload-rotate 1150ms linear infinite;
+}
+
+.c1:after {
+  content: '';
+  margin: -28px 0 0 -28px;
+  height: 55px;
+  width: 55px;
+  -webkit-animation: cssload-rotate 2300ms linear infinite;
+  animation: cssload-rotate 2300ms linear infinite;
+}
+
+<div
+  class="col-12"
+>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+  </div>
+</div>
+`;
+
+exports[`VoteForm renders correctly when user is not logged in 1`] = `
+.c0 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.c1 {
+  display: block;
+}
+
+@media (max-width:575px) {
+  .c0 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}
+
+<div
+  class="col-12 col-sm-4"
+>
+  <h1
+    class="c0"
+  >
+    PHP, Python or Ruby?
+  </h1>
+  <form
+    class=""
+    data-testid="vote-form"
+    id="vote"
+  >
+    <div
+      class="form-group"
+    >
+      <label
+        class=""
+        for="selection"
+      >
+        I want to vote for...
+      </label>
+      <select
+        class="form-control"
+        name="selection"
+      >
+        <option
+          disabled=""
+        />
+        <option>
+          PHP
+        </option>
+        <option>
+          Python
+        </option>
+        <option>
+          Ruby
+        </option>
+      </select>
+    </div>
+    <div
+      class="c1 btn-group-vertical"
+      role="group"
+    >
+      <button
+        class="btn btn-outline-success"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
