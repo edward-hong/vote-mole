@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select renders correctly when untouched 1`] = `
+<div
+  class="form-group"
+>
+  <label
+    class=""
+    for="select"
+  />
+  <select
+    class="form-control"
+    name="select"
+  >
+    <option
+      disabled=""
+    />
+    <option>
+      English
+    </option>
+    <option>
+      French
+    </option>
+    <option>
+      German
+    </option>
+    <option>
+      Russian
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Select renders correctly when valid 1`] = `
+<div
+  class="form-group"
+>
+  <label
+    class=""
+    for="select"
+  />
+  <select
+    class="is-valid form-control"
+    name="select"
+  >
+    <option
+      disabled=""
+    />
+    <option>
+      English
+    </option>
+    <option>
+      French
+    </option>
+    <option>
+      German
+    </option>
+    <option>
+      Russian
+    </option>
+  </select>
+</div>
+`;
