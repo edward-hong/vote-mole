@@ -1,5 +1,5 @@
 import React from 'react'
-import renderWithRouter from '../../utils/renderWithRouter'
+import renderWithRouter from '../../utils/test/renderWithRouter'
 
 import Footer from '.'
 

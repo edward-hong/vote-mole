@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import renderWithRouter from '../../utils/renderWithRouter'
+import renderWithRouter from '../../utils/test/renderWithRouter'
 import Polls from '.'
 
 describe('Polls', () => {

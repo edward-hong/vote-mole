@@ -28,6 +28,7 @@
 	"devDependencies": {
 		"@testing-library/react": "^8.0.2",
 		"history": "^4.9.0",
+		"jest-canvas-mock": "^2.1.0",
 		"jest-dom": "^3.5.0",
 		"jest-styled-components": "^6.3.3"
 	},
