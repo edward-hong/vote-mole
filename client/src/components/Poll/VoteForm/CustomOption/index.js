@@ -17,7 +17,10 @@ const CustomOption = ({
 		<FormGroup>
 			<Label htmlFor={input.name}>{label}</Label>
 			<Input valid={valid} {...input} type={type} placeholder={placeholder} />
-			{and(and(touched, error), <ErrorMessage message={error} />)}
+			{and(
+				and(touched, error),
+				<ErrorMessage data-testid="custom-option-error" message={error} />,
+			)}
 		</FormGroup>
 	)
 }
