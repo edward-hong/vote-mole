@@ -32,11 +32,9 @@ describe('Graph', () => {
 				},
 			],
 		}
-		const { container, debug } = renderWithRedux(<Graph poll={poll} />, {
+		const { container } = renderWithRedux(<Graph poll={poll} />, {
 			initialState: { poll: poll },
 		})
-
-		debug()
 
 		expect(container.firstChild).toMatchSnapshot()
 	})

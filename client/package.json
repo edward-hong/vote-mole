@@ -62,7 +62,7 @@
 			"!src/setupProxy.js",
 			"!src/state/**/*/*.js",
 			"!src/state/initialState.js",
-			"!src/utils/renderWithRouter/index.js"
+			"!src/utils/test/**/*/*.js"
 		]
 	}
 }
