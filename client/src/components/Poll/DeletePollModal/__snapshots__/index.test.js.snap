@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeletePollModal renders correctly when \`isOpen\` is true 1`] = `null`;
