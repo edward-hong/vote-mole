@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageIndex renders correctly when \`polls\` prop is passed 1`] = `
+.c0 .pagination {
+  margin-top: 2rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 .page-link {
+  color: #21252a;
+  border-color: #21252a;
+}
+
+.c0 .page-link:focus,
+.c0 .page-link:hover {
+  color: white;
+  border-color: #21252a;
+  background-color: rgba(33,37,41,0.7);
+  -webkit-transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+}
+
+.c0 .page-item.active .page-link {
+  background-color: #21252a;
+  border-color: #21252a;
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="pagination"
+  >
+    <li
+      class="page-item"
+    >
+      <a
+        class="page-link"
+        href="#"
+      >
+        «
+      </a>
+    </li>
+    <li
+      class="page-item"
+    >
+      <a
+        class="page-link"
+        href="#"
+      >
+        ‹
+      </a>
+    </li>
+    <li
+      class="page-item"
+    >
+      <a
+        class="page-link"
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li
+      class="page-item"
+    >
+      <a
+        class="page-link"
+        href="#"
+      >
+        ›
+      </a>
+    </li>
+    <li
+      class="page-item"
+    >
+      <a
+        class="page-link"
+        href="#"
+      >
+        »
+      </a>
+    </li>
+  </ul>
+</div>
+`;
