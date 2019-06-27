@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation renders correctly 1`] = `
+.c0 {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #21252a;
+}
+
+.c2 {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.c1.c1 {
+  color: #21252a;
+  border-color: #21252a;
+  width: 56px;
+  height: 40px;
+  position: relative;
+  line-height: 50px;
+}
+
+.c1.c1 span {
+  background-image: none;
+  width: 30px;
+  height: 2px;
+  background-color: #21252a;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1.c1 span:before,
+.c1.c1 span:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #21252a;
+  left: -0.0001%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c1.c1 span:before {
+  top: -8px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c1.c1 span:after {
+  top: 8px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+<nav
+  class="c0 navbar navbar-expand-md navbar-light"
+>
+  <a
+    class="navbar-brand"
+    href="/"
+  >
+    <img
+      alt="vote mole logo"
+      src="https://res.cloudinary.com/avatarhzh/image/upload/v1509887327/build-a-voting-app/logo.svg"
+    />
+    VoteMole
+  </a>
+  <button
+    active="0"
+    class="c1 navbar-toggler"
+    type="button"
+  >
+    <span
+      class="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    class="c2 collapse navbar-collapse"
+  >
+    <ul
+      class="navbar-nav"
+    />
+  </div>
+</nav>
+`;
+
+exports[`Navigation renders correctly when nav is expanded 1`] = `
+.c0 {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #21252a;
+}
+
+.c2 {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.c1.c1 {
+  color: #21252a;
+  border-color: #21252a;
+  width: 56px;
+  height: 40px;
+  position: relative;
+  line-height: 50px;
+}
+
+.c1.c1 span {
+  background-image: none;
+  width: 30px;
+  height: 2px;
+  background-color: transparent;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1.c1 span:before,
+.c1.c1 span:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #21252a;
+  left: -0.0001%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c1.c1 span:before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.c1.c1 span:after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+<nav
+  class="c0 navbar navbar-expand-md navbar-light"
+>
+  <a
+    class="navbar-brand"
+    href="/"
+  >
+    <img
+      alt="vote mole logo"
+      src="https://res.cloudinary.com/avatarhzh/image/upload/v1509887327/build-a-voting-app/logo.svg"
+    />
+    VoteMole
+  </a>
+  <button
+    active="1"
+    class="c1 navbar-toggler"
+    type="button"
+  >
+    <span
+      class="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    class="c2 collapsing navbar-collapse"
+    style="height: 0px;"
+  >
+    <ul
+      class="navbar-nav"
+    />
+  </div>
+</nav>
+`;
