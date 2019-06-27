@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItems renders correctly when \`auth\` state is false 1`] = `
+.c0 {
+  text-align: center;
+}
+
+<a
+  class="nav-link"
+  href="#"
+>
+  <li
+    class="c0 nav-item"
+  >
+    Login
+  </li>
+</a>
+`;
+
+exports[`NavItems renders correctly when \`auth\` state is true 1`] = `
+.c0 {
+  text-align: center;
+}
+
+<a
+  class="nav-link"
+  href="/my_polls"
+>
+  <li
+    class="c0 nav-item"
+  >
+    My Polls
+  </li>
+</a>
+`;
