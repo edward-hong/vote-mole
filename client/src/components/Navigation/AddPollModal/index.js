@@ -14,7 +14,7 @@ import {
 import { ajax } from 'rxjs/ajax'
 import { compose, or, map, equals } from 'ramda'
 
-import AddPollQuestionInput from './AddPollQuestionInput'
+import FormField from '../../FormField'
 import AddPollOptionsInputs from './AddPollOptionsInputs'
 import BlackButton from '../../styled/BlackButton'
 import { POLL_SUBMIT_PATH, POLL_BRANCH_PATH } from '../../../constants'
@@ -61,14 +61,14 @@ const AddPollModal = ({
 				toggle()
 				if (equals(status, 406)) {
 					alert.error(
-						'Submit failed: You already have a poll asking the same question'
+						'Submit failed: You already have a poll asking the same question',
 					)
 				} else if (equals(status, 401)) {
 					alert.error(
-						'Submit faild: You are unauthorized to create a poll. Please login'
+						'Submit faild: You are unauthorized to create a poll. Please login',
 					)
 				}
-			}
+			},
 		)
 
 	return (
@@ -81,7 +81,7 @@ const AddPollModal = ({
 						type="text"
 						label="Poll Question"
 						placeholder="Enter your poll question"
-						component={AddPollQuestionInput}
+						component={FormField}
 					/>
 					<FieldArray name="options" component={AddPollOptionsInputs} />
 				</Form>
@@ -142,5 +142,5 @@ const mapStateToProps = ({ form, auth }) => ({ form, auth })
 export default compose(
 	reduxForm({ form: 'add_poll', validate }),
 	connect(mapStateToProps),
-	withRouter
+	withRouter,
 )(AddPollModal)

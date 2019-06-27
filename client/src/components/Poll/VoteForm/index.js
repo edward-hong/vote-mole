@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { isNil, compose, is, and, equals } from 'ramda'
 
 import Select from './Select'
-import CustomOption from './CustomOption'
+import FormField from '../../FormField'
 import Loader from '../../styled/Loader'
 import { votePoll } from '../../../state/actions'
 import { COLOURS } from '../../../constants'
@@ -99,7 +99,7 @@ const VoteForm = ({ poll, handleSubmit, auth, form, toggle, votePoll }) => {
 						type="text"
 						label="Vote with my own option:"
 						placeholder="Custom option"
-						component={CustomOption}
+						component={FormField}
 					/>,
 				)}
 				<Buttons vertical>

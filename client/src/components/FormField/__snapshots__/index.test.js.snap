@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomOption renders correctly when untouched 1`] = `
+exports[`FormField renders correctly when untouched 1`] = `
 <div
   class="form-group"
 >
@@ -16,17 +16,17 @@ exports[`CustomOption renders correctly when untouched 1`] = `
 </div>
 `;
 
-exports[`CustomOption renders correctly when valid 1`] = `
+exports[`FormField renders correctly when valid 1`] = `
 <div
   class="form-group"
 >
   <label
     class=""
-    for="customOption"
+    for="field"
   />
   <input
     class="is-valid form-control"
-    name="customOption"
+    name="field"
     type="text"
   />
 </div>

@@ -1,16 +1,13 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import CustomOption from '.'
+import FormField from '.'
 
-describe('CustomOption', () => {
+describe('FormField', () => {
 	it('shows error message when there is an error', () => {
-		const error = 'Please enter your custom selection'
+		const error = 'Please fill this field'
 		const { getByText } = render(
-			<CustomOption
-				input={{ name: 'customOption' }}
-				meta={{ touched: true, error }}
-			/>,
+			<FormField input={{ name: 'field' }} meta={{ touched: true, error }} />,
 		)
 
 		expect(getByText(error)).toHaveTextContent(error)
@@ -18,8 +15,8 @@ describe('CustomOption', () => {
 
 	it('renders correctly when valid', () => {
 		const { container } = render(
-			<CustomOption
-				input={{ name: 'customOption' }}
+			<FormField
+				input={{ name: 'field' }}
 				meta={{ touched: true, error: false }}
 			/>,
 		)
@@ -29,7 +26,7 @@ describe('CustomOption', () => {
 
 	it('renders correctly when untouched', () => {
 		const { container } = render(
-			<CustomOption
+			<FormField
 				input={{ name: 'customOption' }}
 				meta={{ touched: false, error: false }}
 			/>,
