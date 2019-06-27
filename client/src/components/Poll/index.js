@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import { connect } from 'react-redux'
 import { Container, Row, Col } from 'reactstrap'
 import styled from 'styled-components'
-import { not } from 'ramda'
 
 import VoteForm from './VoteForm'
 import Graph from './Graph'
 import DeletePollModal from './DeletePollModal'
+import useModal from '../../hooks/useModal'
 import { fetchPoll, clearPoll } from '../../state/actions'
 
 const GraphContainer = styled(Col)`
@@ -17,7 +17,7 @@ const GraphContainer = styled(Col)`
 `
 
 const Poll = ({ match, fetchPoll, clearPoll }) => {
-	const [isOpen, setIsOpen] = useState(false)
+	const [isOpen, toggle] = useModal()
 
 	useEffect(() => {
 		// fetch poll data using id from url
@@ -27,8 +27,6 @@ const Poll = ({ match, fetchPoll, clearPoll }) => {
 			clearPoll()
 		}
 	}, [fetchPoll, match, clearPoll])
-
-	const toggle = () => setIsOpen(not(isOpen))
 
 	return (
 		<Container fluid>
