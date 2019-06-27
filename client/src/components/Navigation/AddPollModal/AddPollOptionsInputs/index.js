@@ -38,7 +38,7 @@ const AddPollOptionsInputs = ({ fields, meta: { error, pristine } }) => {
 						placeholder={`Option ${inc(index)}`}
 					/>
 				),
-				fields
+				fields,
 			)}
 		</PollOptionsWrapper>
 	)

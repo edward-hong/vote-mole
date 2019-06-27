@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPollOptionsInputs renders correctly 1`] = `
+.c2 {
+  margin-bottom: 3px;
+}
+
+.c2 input {
+  height: 47px;
+}
+
+.c0 {
+  text-align: center;
+}
+
+.c1 {
+  color: #21252a;
+  border-color: #21252a;
+  margin-bottom: 10px;
+}
+
+.c1:hover,
+.c1:active {
+  background-color: #21252a;
+  border-color: #21252a;
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 3px rgba(33,37,41,0.5);
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1 btn btn-outline-secondary"
+    type="button"
+  >
+    Add Option
+  </button>
+  <div
+    class="c2 input-group"
+  >
+    <input
+      class="form-control"
+      id="test1"
+      name="test1"
+      placeholder="Option 1"
+      type="text"
+      value=""
+    />
+    <div
+      class="input-group-append"
+    >
+      <button
+        class="btn btn-outline-danger"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="fa fa-close fa-2x"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    class="c2 input-group"
+  >
+    <input
+      class="form-control"
+      id="test2"
+      name="test2"
+      placeholder="Option 2"
+      type="text"
+      value=""
+    />
+    <div
+      class="input-group-append"
+    >
+      <button
+        class="btn btn-outline-danger"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="fa fa-close fa-2x"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
