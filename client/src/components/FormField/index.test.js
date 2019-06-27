@@ -10,7 +10,7 @@ describe('FormField', () => {
 			<FormField input={{ name: 'field' }} meta={{ touched: true, error }} />,
 		)
 
-		expect(getByText(error)).toHaveTextContent(error)
+		expect(getByText(error)).toBeInTheDocument()
 	})
 
 	it('renders correctly when valid', () => {

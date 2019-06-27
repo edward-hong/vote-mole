@@ -15,7 +15,7 @@ describe('AddPollExtraOptionInput', () => {
 			/>,
 		)
 
-		expect(getByText(error)).toHaveTextContent(error)
+		expect(getByText(error)).toBeInTheDocument()
 	})
 
 	it('renders correctly when valid', () => {
