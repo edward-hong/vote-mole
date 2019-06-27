@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { not } from 'ramda'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from 'reactstrap'
 import styled from 'styled-components'
 
 import NavItems from './NavItems'
 import LoginModal from './LoginModal'
 import AddPollModal from './AddPollModal'
+import useModal from '../../hooks/useModal'
 import { HOME_PATH, COLOURS } from '../../constants'
 
 const NavigationBar = styled(Navbar)`
@@ -62,11 +62,9 @@ const Hamburger = styled(NavbarToggler)`
 `
 
 const Navigation = () => {
-	const [expandNav, setExpandNav] = useState(false)
-	const [isOpenLogin, setIsOpenLogin] = useState(false)
-	const [isOpenAddPoll, setIsOpenAddPoll] = useState(false)
-
-	const handleToggle = (state, setState) => () => setState(not(state))
+	const [isExpandNav, toggleExpandNav] = useModal()
+	const [isOpenLogin, toggleLogin] = useModal()
+	const [isOpenAddPoll, toggleAddPoll] = useModal()
 
 	return (
 		<NavigationBar light expand="md">
@@ -80,26 +78,17 @@ const Navigation = () => {
 			</NavbarBrand>
 
 			{/* Hamburger icon for smaller screens */}
-			<Hamburger
-				active={expandNav ? 1 : 0}
-				onClick={handleToggle(expandNav, setExpandNav)}
-			/>
-			<CollapsibleItems isOpen={expandNav} navbar>
+			<Hamburger active={isExpandNav ? 1 : 0} onClick={toggleExpandNav} />
+			<CollapsibleItems isOpen={isExpandNav} navbar>
 				<Nav navbar>
-					<NavItems
-						toggleLogin={handleToggle(isOpenLogin, setIsOpenLogin)}
-						toggleAddPoll={handleToggle(isOpenAddPoll, setIsOpenAddPoll)}
-					/>
+					<NavItems toggleLogin={toggleLogin} toggleAddPoll={toggleAddPoll} />
 				</Nav>
 			</CollapsibleItems>
-			<LoginModal
-				isOpen={isOpenLogin}
-				toggle={handleToggle(isOpenLogin, setIsOpenLogin)}
-			/>
+			<LoginModal isOpen={isOpenLogin} toggle={toggleLogin} />
 			<AddPollModal
 				isOpen={isOpenAddPoll}
-				toggle={handleToggle(isOpenAddPoll, setIsOpenAddPoll)}
-				setExpandNav={setExpandNav}
+				toggle={toggleAddPoll}
+				setExpandNav={toggleExpandNav}
 			/>
 		</NavigationBar>
 	)
