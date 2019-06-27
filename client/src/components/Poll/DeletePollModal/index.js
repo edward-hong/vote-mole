@@ -17,8 +17,8 @@ const DeletePollModal = ({ isOpen, toggle, history, userId }) => {
 			method: 'DELETE',
 		}).subscribe(
 			({ response: { status } }) => {
-				alert.success(status)
 				history.push(HOME_PATH)
+				alert.success(status)
 			},
 			({ status }) => {
 				if (equals(status, 400)) {
