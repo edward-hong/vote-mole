@@ -1,0 +1,477 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home clicking on the pagination buttons loads new pages 1`] = `
+.c4 {
+  height: 3.5rem;
+  padding: 0;
+  border-color: #21252a;
+}
+
+.c5 {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #21252a;
+  line-height: 3.5rem;
+}
+
+.c5:hover {
+  color: white;
+  background-color: #21252a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+}
+
+.c3 {
+  height: 276px;
+}
+
+.c6 .pagination {
+  margin-top: 2rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 .page-link {
+  color: #21252a;
+  border-color: #21252a;
+}
+
+.c6 .page-link:focus,
+.c6 .page-link:hover {
+  color: white;
+  border-color: #21252a;
+  background-color: rgba(33,37,41,0.7);
+  -webkit-transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+}
+
+.c6 .page-item.active .page-link {
+  background-color: #21252a;
+  border-color: #21252a;
+}
+
+.c2 {
+  margin-top: 1.5rem;
+}
+
+.c0 {
+  text-align: center;
+}
+
+.c1 {
+  text-align: center;
+}
+
+<div
+  class="container-fluid"
+>
+  <h1
+    class="c0"
+  >
+    VoteMole
+  </h1>
+  <h2
+    class="c1"
+  >
+    Can You Dig It?
+  </h2>
+  <div
+    class="c2 row"
+  >
+    <div
+      class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+    >
+      <img
+        alt="Vote Mole logo"
+        class="logo-home"
+        src="https://res.cloudinary.com/avatarhzh/image/upload/v1509887327/build-a-voting-app/logo.svg"
+      />
+    </div>
+  </div>
+  <div
+    class="c2 row"
+  >
+    <div
+      class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+    >
+      <ul
+        class="c3 list-group"
+      >
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf28cee882077685935e3"
+          >
+            PHP, Python or Ruby?
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf0d4ee882077685935de"
+          >
+            Favourite JavaScript Framework
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf0a6ee882077685935d9"
+          >
+            Favourite Sport
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf088ee882077685935d6"
+          >
+            Favourite Movie
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf04fee882077685935d1"
+          >
+            Favourite Superhero
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf04fee882077685djx0qe"
+          >
+            Favourite Colour
+          </a>
+        </li>
+      </ul>
+      <div
+        class="c6"
+      >
+        <ul
+          class="pagination"
+        >
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              «
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              ‹
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              1
+            </a>
+          </li>
+          <li
+            class="page-item active"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              2
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              ›
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              »
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Home renders correctly 1`] = `
+.c4 {
+  height: 3.5rem;
+  padding: 0;
+  border-color: #21252a;
+}
+
+.c5 {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #21252a;
+  line-height: 3.5rem;
+}
+
+.c5:hover {
+  color: white;
+  background-color: #21252a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+}
+
+.c3 {
+  height: 276px;
+}
+
+.c6 .pagination {
+  margin-top: 2rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 .page-link {
+  color: #21252a;
+  border-color: #21252a;
+}
+
+.c6 .page-link:focus,
+.c6 .page-link:hover {
+  color: white;
+  border-color: #21252a;
+  background-color: rgba(33,37,41,0.7);
+  -webkit-transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+}
+
+.c6 .page-item.active .page-link {
+  background-color: #21252a;
+  border-color: #21252a;
+}
+
+.c2 {
+  margin-top: 1.5rem;
+}
+
+.c0 {
+  text-align: center;
+}
+
+.c1 {
+  text-align: center;
+}
+
+<div
+  class="container-fluid"
+>
+  <h1
+    class="c0"
+  >
+    VoteMole
+  </h1>
+  <h2
+    class="c1"
+  >
+    Can You Dig It?
+  </h2>
+  <div
+    class="c2 row"
+  >
+    <div
+      class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+    >
+      <img
+        alt="Vote Mole logo"
+        class="logo-home"
+        src="https://res.cloudinary.com/avatarhzh/image/upload/v1509887327/build-a-voting-app/logo.svg"
+      />
+    </div>
+  </div>
+  <div
+    class="c2 row"
+  >
+    <div
+      class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+    >
+      <ul
+        class="c3 list-group"
+      >
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf28cee882077685935e3"
+          >
+            PHP, Python or Ruby?
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf0d4ee882077685935de"
+          >
+            Favourite JavaScript Framework
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf0a6ee882077685935d9"
+          >
+            Favourite Sport
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf088ee882077685935d6"
+          >
+            Favourite Movie
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf04fee882077685935d1"
+          >
+            Favourite Superhero
+          </a>
+        </li>
+        <li
+          class="c4 list-group-item"
+        >
+          <a
+            class="c5"
+            href="/poll/5cdaf04fee882077685djx0qe"
+          >
+            Favourite Colour
+          </a>
+        </li>
+      </ul>
+      <div
+        class="c6"
+      >
+        <ul
+          class="pagination"
+        >
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              «
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              ‹
+            </a>
+          </li>
+          <li
+            class="page-item active"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              1
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              2
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              ›
+            </a>
+          </li>
+          <li
+            class="page-item"
+          >
+            <a
+              class="page-link"
+              href="#"
+            >
+              »
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
