@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+.c7 {
+  position: relative;
+  margin-top: 30px;
+}
+
+.c8 {
+  margin: -24px 0 0 -24px;
+  height: 49px;
+  width: 49px;
+  -webkit-animation: cssload-rotate 1150ms linear infinite;
+  animation: cssload-rotate 1150ms linear infinite;
+}
+
+.c8,
+.c8:before,
+.c8:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid #ccc;
+  border-left-color: black;
+  border-radius: 974px;
+}
+
+.c8:before {
+  content: '';
+  margin: -22px 0 0 -22px;
+  height: 43px;
+  width: 43px;
+  -webkit-animation: cssload-rotate 1150ms linear infinite;
+  animation: cssload-rotate 1150ms linear infinite;
+}
+
+.c8:after {
+  content: '';
+  margin: -28px 0 0 -28px;
+  height: 55px;
+  width: 55px;
+  -webkit-animation: cssload-rotate 2300ms linear infinite;
+  animation: cssload-rotate 2300ms linear infinite;
+}
+
+.c6 {
+  margin-top: 1.5rem;
+}
+
+.c4 {
+  text-align: center;
+}
+
+.c5 {
+  text-align: center;
+}
+
+.c1 {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #21252a;
+}
+
+.c3 {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.c2.c2 {
+  color: #21252a;
+  border-color: #21252a;
+  width: 56px;
+  height: 40px;
+  position: relative;
+  line-height: 50px;
+}
+
+.c2.c2 span {
+  background-image: none;
+  width: 30px;
+  height: 2px;
+  background-color: #21252a;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c2.c2 span:before,
+.c2.c2 span:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #21252a;
+  left: -0.0001%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c2.c2 span:before {
+  top: -8px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c2.c2 span:after {
+  top: 8px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c9 {
+  text-align: center;
+  margin: 3rem auto 1.5rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+>
+  <nav
+    class="c1 navbar navbar-expand-md navbar-light"
+  >
+    <a
+      class="navbar-brand"
+      href="/"
+    >
+      <img
+        alt="vote mole logo"
+        src="https://res.cloudinary.com/avatarhzh/image/upload/v1509887327/build-a-voting-app/logo.svg"
+      />
+      VoteMole
+    </a>
+    <button
+      active="0"
+      class="c2 navbar-toggler"
+      type="button"
+    >
+      <span
+        class="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      class="c3 collapse navbar-collapse"
+    >
+      <ul
+        class="navbar-nav"
+      />
+    </div>
+  </nav>
+  <div
+    class="container-fluid"
+  >
+    <h1
+      class="c4"
+    >
+      VoteMole
+    </h1>
+    <h2
+      class="c5"
+    >
+      Can You Dig It?
+    </h2>
+    <div
+      class="c6 row"
+    >
+      <div
+        class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+      >
+        <img
+          alt="Vote Mole logo"
+          class="logo-home"
+          src="https://res.cloudinary.com/avatarhzh/image/upload/v1509887327/build-a-voting-app/logo.svg"
+        />
+      </div>
+    </div>
+    <div
+      class="c6 row"
+    >
+      <div
+        class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="c9"
+  >
+    Made by Edward Hong | 
+    <a
+      href="/privacy_policy"
+    >
+      Privacy Policy
+    </a>
+  </footer>
+</div>
+`;
