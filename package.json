@@ -17,6 +17,7 @@
 		"client": "yarn --cwd client start",
 		"dev": "concurrently --names \"server,client\" \"yarn server --silent\" \"yarn client --silent\"",
 		"build": "yarn --cwd client && yarn --cwd client build",
+		"test": "yarn --cwd client test",
 		"deploy": "git push heroku master"
 	},
 	"keywords": [

@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - '10'
+dist: trusty
+services: '-mongodb -redis-server'
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - client/node_modules
+install:
+  - yarn
+  - yarn build
+script:
+  - nohup yarn start &
+  - sleep 3
+  - yarn test
+deploy:
+  api_key:
+    secure: LU9y74ccynczYQJwhM9nDvltp+K8h/pI89gDu/J+ToLFwutw4b/5U72Raeo3YIgwfwr6TQu8iNSepmSWhdoN7fQYnM4tfQp5/Awai98RvM97j5RquKp3ANuMayy9jFC1x03CF8AoIK273clRrynuhaWG0zL+rJ11mTSi297fZGkae9GbAuytv+tr0/qkaGYM3akvuLEshhQd8UM75I1aWDDCa4UzqRQu7r5gqOzMH7/q2pMXxbXDmWA84EI0RAURHc49ieruzbNFZfGpvzEtrXOOBcm0NqiZjXVFxSSGIUO51dTD9LkpcP9MZCQbRmqTC6KvgezVhjTLb7Ll2PJ22K07oeKTXE5hjgzX5lna5RxwZRM2De74J7MBA/SnWDvU1RBPGu8j9xE7oArvMCsY4pc7gWDMMxWxltNDoZjwrFwNbUPlFBZzMj0wSFJnNQlsZCH4B9Aawyiyf2nSmJZJjtpuQ8RfaiAnQC70PPdD/gkRGG6gylCsmjAivDEanMSr+Lsg2fuN3GCJGZrwTJNFqSyKThPfZtoUanxDqnCnYkfWy46o+1rVMXzJmaGN2Ezlml6SJLCNOqiAT1dBq4DnJh3staYYpngwbTRkF7sqpVBelyHAfhyeCRPXULyRFD1AIBbJsx2KtmSkTcwVHkYRZF7mznXqvb9R1K+XnpSpcfs=

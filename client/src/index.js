@@ -23,7 +23,7 @@ const epicMiddleware = createEpicMiddleware()
 const appliedMiddleware = applyMiddleware(epicMiddleware)
 
 // Use Redux Dev Tools during development
-const middleware = not(equals(NODE_ENV, 'production'))
+const middleware = equals(NODE_ENV, 'development')
 	? composeWithDevTools(appliedMiddleware)
 	: compose(appliedMiddleware)
 
@@ -47,11 +47,11 @@ ReactDOM.render(
 			<App />
 		</AlertProvider>
 	</StateProvider>,
-	document.getElementById('root')
+	document.getElementById('root'),
 )
 
 // HMR
-if (and(not(equals(NODE_ENV, 'production')), not(isNil(module.hot)))) {
+if (and(equals(NODE_ENV, 'development'), not(isNil(module.hot)))) {
 	if (module.hot) {
 		module.hot.accept('./components/App', () => {
 			ReactDOM.render(<App />, document.querySelector('#root'))
