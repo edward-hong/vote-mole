@@ -28,7 +28,7 @@ const AddPollModal = ({
 	submitting,
 	auth,
 	history,
-	setExpandNav,
+	toggleExpandNav,
 }) => {
 	const alert = useAlert()
 
@@ -52,8 +52,8 @@ const AddPollModal = ({
 			},
 		}).subscribe(
 			({ response }) => {
+				toggleExpandNav()
 				cancel()
-				setExpandNav(false)
 				history.push(`${POLL_BRANCH_PATH}${response}`)
 				alert.success('Poll submitted!')
 			},
@@ -65,7 +65,7 @@ const AddPollModal = ({
 					)
 				} else if (equals(status, 401)) {
 					alert.error(
-						'Submit faild: You are unauthorized to create a poll. Please login',
+						'Submit failed: You are unauthorized to create a poll. Please login',
 					)
 				}
 			},
