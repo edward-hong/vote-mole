@@ -41,14 +41,15 @@ const commonSessionInfo = {
 	resave: true,
 }
 
-const sessionInfo = ['production', 'ci'].includes(NODE_ENV)
-	? {
-			...commonSessionInfo,
-			store: new MongoStore({
-				mongooseConnection: mongoose.connection,
-			}),
-	  }
-	: { ...commonSessionInfo }
+const sessionInfo =
+	NODE_ENV === 'production'
+		? {
+				...commonSessionInfo,
+				store: new MongoStore({
+					mongooseConnection: mongoose.connection,
+				}),
+		  }
+		: { ...commonSessionInfo }
 
 // Express server
 
@@ -66,7 +67,7 @@ app.use(passport.session())
 app.use('/api/auth', authRoutes)
 app.use('/api/poll', pollRoutes)
 
-if (['production', 'ci'].includes(NODE_ENV)) {
+if (NODE_ENV === 'production') {
 	app.use(express.static('client/build'))
 	app.get('*', (req, res) => {
 		res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
