@@ -17,7 +17,7 @@
 		"client": "yarn --cwd client start",
 		"dev": "concurrently --names \"server,client\" \"yarn server --silent\" \"yarn client --silent\"",
 		"build": "yarn --cwd client && yarn --cwd client build",
-		"test": "yarn --cwd client test",
+		"test": "yarn --cwd client test:coverage",
 		"deploy": "git push heroku master"
 	},
 	"keywords": [
@@ -46,6 +46,7 @@
 		"request-ip": "^2.1.3"
 	},
 	"devDependencies": {
+		"coveralls": "^3.0.4",
 		"nodemon": "^1.19.0"
 	}
 }

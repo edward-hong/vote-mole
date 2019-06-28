@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/edward-hong/vote-mole.svg?branch=master)](https://travis-ci.org/edward-hong/vote-mole)
+
 # Vote Mole
 
 A polling app built with the MERN stack. You can find the live website
