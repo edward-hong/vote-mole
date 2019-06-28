@@ -61,5 +61,5 @@ const mapStateToProps = ({ polls }) => ({ polls })
 
 export default connect(
 	mapStateToProps,
-	{ fetchUserPolls, clearPolls }
+	{ fetchUserPolls, clearPolls },
 )(MyPolls)
