@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/edward-hong/vote-mole.svg?branch=master)](https://travis-ci.org/edward-hong/vote-mole)
+[![Coverage Status](https://coveralls.io/repos/github/edward-hong/vote-mole/badge.svg?branch=master)](https://coveralls.io/github/edward-hong/vote-mole?branch=master)
+[![Dependencies Status](https://david-dm.org/edward-hong/vote-mole.svg)](https://david-dm.org/edward-hong/vote-mole.svg)
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
 # Vote Mole
 

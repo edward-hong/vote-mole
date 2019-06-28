@@ -14,8 +14,6 @@ install:
   - yarn
   - yarn build
 script:
-  - nohup yarn start &
-  - sleep 3
   - yarn test && cat ./client/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./client/coverage
 deploy:
   provider: heroku
