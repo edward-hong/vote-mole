@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 import Home from '../Home'
@@ -11,7 +11,12 @@ import Footer from '../Footer'
 import PrivacyPolicy from '../PrivacyPolicy'
 import RequireAuth from '../hoc/RequireAuth'
 import { fetchUser } from '../../state/actions'
-import { HOME_PATH, POLL_PATH, POLLS_USER_PATH, PRIVACY_POLICY_PATH } from '../../constants'
+import {
+	HOME_PATH,
+	POLL_PATH,
+	POLLS_USER_PATH,
+	PRIVACY_POLICY_PATH,
+} from '../../constants'
 
 const Wrapper = styled.div`
 	display: flex;
@@ -19,11 +24,13 @@ const Wrapper = styled.div`
 	flex-direction: column;
 `
 
-const App = ({ fetchUser }) => {
+const App = () => {
+	const dispatch = useDispatch()
+
 	// Check whether a user is logged in or not
 	useEffect(() => {
-		fetchUser()
-	}, [fetchUser])
+		dispatch(fetchUser())
+	}, [dispatch])
 
 	// Set frontend routes with Navigation and Footer appearing in all routes
 	return (
@@ -40,7 +47,4 @@ const App = ({ fetchUser }) => {
 	)
 }
 
-export default connect(
-	null,
-	{ fetchUser }
-)(App)
+export default App

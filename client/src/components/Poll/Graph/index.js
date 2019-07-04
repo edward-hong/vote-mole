@@ -1,11 +1,13 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector, shallowEqual } from 'react-redux'
 import { Doughnut } from 'react-chartjs-2'
 import { isNil, map } from 'ramda'
 
 import { COLOURS } from '../../../constants'
 
-const Graph = ({ poll }) => {
+const Graph = () => {
+	const poll = useSelector(({ poll }) => poll, shallowEqual)
+
 	// Render nothing if poll data haven't been received
 	if (isNil(poll)) {
 		return null
@@ -18,7 +20,7 @@ const Graph = ({ poll }) => {
 	const backgroundColor = map(([bgColor]) => bgColor, COLOURS.graphColours)
 	const hoverBackgroundColor = map(
 		([_, hColor]) => hColor,
-		COLOURS.graphColours
+		COLOURS.graphColours,
 	)
 
 	const dataset = {
@@ -36,6 +38,4 @@ const Graph = ({ poll }) => {
 	)
 }
 
-const mapStateToProps = ({ poll }) => ({ poll })
-
-export default connect(mapStateToProps)(Graph)
+export default Graph

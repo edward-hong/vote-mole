@@ -61,12 +61,9 @@ describe('MyPolls', () => {
 	})
 
 	it('clicking on the pagination buttons loads new pages', () => {
-		const { getByText, container } = renderWithRouterAndRedux(
-			<MyPolls auth={auth} />,
-			{
-				initialState: { polls: { count: polls.length, polls } },
-			},
-		)
+		const { getByText, container } = renderWithRouterAndRedux(<MyPolls />, {
+			initialState: { polls: { count: polls.length, polls }, auth },
+		})
 		const nextPageButton = getByText('›')
 
 		fireEvent.click(nextPageButton)

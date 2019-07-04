@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import { Container, Col } from 'reactstrap'
 import styled from 'styled-components'
 import { dec, multiply } from 'ramda'
@@ -14,21 +14,26 @@ const SubHeading = styled.h2`
 	text-align: center;
 `
 
-const Home = ({ polls, fetchAllPolls, clearPolls }) => {
+const Home = () => {
 	const pageSize = 5
 	const [page, setPage] = useState(1)
 
+	const dispatch = useDispatch()
+	const polls = useSelector(({ polls }) => polls, shallowEqual)
+
 	useEffect(() => {
-		fetchAllPolls({ limit: pageSize, offset: 0 })
+		dispatch(fetchAllPolls({ limit: pageSize, offset: 0 }))
 
 		return () => {
-			clearPolls()
+			dispatch(clearPolls())
 		}
-	}, [fetchAllPolls, clearPolls])
+	}, [dispatch])
 
 	const onPageChange = page => {
 		setPage(page)
-		fetchAllPolls({ limit: pageSize, offset: multiply(pageSize, dec(page)) })
+		dispatch(
+			fetchAllPolls({ limit: pageSize, offset: multiply(pageSize, dec(page)) }),
+		)
 	}
 
 	return (
@@ -67,9 +72,4 @@ const Home = ({ polls, fetchAllPolls, clearPolls }) => {
 	)
 }
 
-const mapStateToProps = ({ polls }) => ({ polls })
-
-export default connect(
-	mapStateToProps,
-	{ fetchAllPolls, clearPolls }
-)(Home)
+export default Home

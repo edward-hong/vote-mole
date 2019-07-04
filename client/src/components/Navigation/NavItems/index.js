@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector, shallowEqual } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { NavLink, NavItem } from 'reactstrap'
 import styled from 'styled-components'
@@ -13,8 +13,10 @@ const NavLinkItem = styled(NavItem)`
 
 // Render nothing if user info hasn't been fetched from backend
 // Then conditionally render NavItems depending on whether user is logged in
-const NavItems = ({ toggleLogin, toggleAddPoll, isLoggedIn }) =>
-	isNil(isLoggedIn) ? null : isLoggedIn ? (
+const NavItems = ({ toggleLogin, toggleAddPoll }) => {
+	const isLoggedIn = useSelector(({ auth }) => auth, shallowEqual)
+
+	return isNil(isLoggedIn) ? null : isLoggedIn ? (
 		<>
 			<NavLink to={POLLS_USER_PATH} tag={Link}>
 				<NavLinkItem>My Polls</NavLinkItem>
@@ -31,7 +33,6 @@ const NavItems = ({ toggleLogin, toggleAddPoll, isLoggedIn }) =>
 			<NavLinkItem>Login</NavLinkItem>
 		</NavLink>
 	)
+}
 
-const mapStateToProps = ({ auth }) => ({ isLoggedIn: auth })
-
-export default connect(mapStateToProps)(NavItems)
+export default NavItems

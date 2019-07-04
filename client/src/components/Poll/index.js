@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Container, Row, Col } from 'reactstrap'
 import styled from 'styled-components'
 
@@ -16,17 +16,19 @@ const GraphContainer = styled(Col)`
 	}
 `
 
-const Poll = ({ match, fetchPoll, clearPoll }) => {
+const Poll = ({ match }) => {
+	const dispatch = useDispatch()
+
 	const [isOpen, toggle] = useModal()
 
 	useEffect(() => {
 		// fetch poll data using id from url
-		fetchPoll(match.params.id)
+		dispatch(fetchPoll(match.params.id))
 
 		return () => {
-			clearPoll()
+			dispatch(clearPoll())
 		}
-	}, [fetchPoll, match, clearPoll])
+	}, [match, dispatch])
 
 	return (
 		<Container fluid>
@@ -45,7 +47,4 @@ const Poll = ({ match, fetchPoll, clearPoll }) => {
 	)
 }
 
-export default connect(
-	null,
-	{ fetchPoll, clearPoll },
-)(Poll)
+export default Poll
