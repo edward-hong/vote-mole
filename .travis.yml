@@ -13,6 +13,9 @@ cache:
 install:
   - yarn
   - yarn build
+branches:
+  only:
+    - production
 script:
   - yarn test && cat ./client/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./client/coverage
 deploy:
