@@ -14,7 +14,7 @@ const RequireAuth = Component => {
 			}
 		}, [auth, props.history])
 
-		return <Component {...props} />
+		return auth && <Component {...props} />
 	}
 
 	return Authentication
