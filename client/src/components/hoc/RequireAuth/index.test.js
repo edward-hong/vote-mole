@@ -79,8 +79,27 @@ describe('RequireAuth', () => {
 		})
 	})
 
-	it('renders correctly when an object', () => {
-		const { container } = renderWithRedux(<EnhancedComponent />)
+	it('when `auth` is false, the component passed in is not rendered', () => {
+		const history = { push: jest.fn() }
+
+		const { container } = renderWithRedux(
+			<EnhancedComponent history={history} />,
+			{
+				initialState: { auth: false },
+			},
+		)
+
+		expect(container.firstChild).toBe(null)
+	})
+
+	it('renders correctly when auth is an object', () => {
+		const auth = {
+			_id: '5cd19682498a98c6962f34c1',
+			profileID: '111881712224957728911',
+		}
+		const { container } = renderWithRedux(<EnhancedComponent />, {
+			initialState: { auth },
+		})
 
 		expect(container.firstChild).toMatchSnapshot()
 	})
